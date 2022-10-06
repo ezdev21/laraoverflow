@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Question>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Answer>
  */
-class QuestionFactory extends Factory
+class AnswerFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,8 +18,8 @@ class QuestionFactory extends Factory
     {
         return [
             'user_id'=>fake()->integer(),
-            'title'=>Str::random(30),
-            'description'=>Str::random(200)
+            'question_id'=>fake()->integer(),
+            'answer'=>Str::random(30)
         ];
     }
 }
