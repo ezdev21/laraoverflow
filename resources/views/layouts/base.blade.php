@@ -7,7 +7,7 @@
 
             <title>@yield('title') - {{ config('app.name') }}</title>
         @else
-            <title>{{ config('app.name') }}</title>
+            <title>Lara Overflow</title>
         @endif
 
         <!-- Favicon -->
@@ -24,7 +24,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
     </head>
 
-    <body>
+    <body class="bg-gray-100">
         @yield('body')
     </body>
 </html>
