@@ -24,7 +24,10 @@ class StoreQuestionRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'user_id'=>['required','numeric'],
+            'category_id'=>['required','numeric'],
+            'title'=>['required','string'],
+            'description'=>['required','string']
         ];
     }
 }
