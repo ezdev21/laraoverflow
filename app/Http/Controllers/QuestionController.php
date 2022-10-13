@@ -40,6 +40,7 @@ class QuestionController extends Controller
             'title'=>'required',
             'description'=>'required'
         ]);
+        Question::create($request->validated());
     }
 
     /**
