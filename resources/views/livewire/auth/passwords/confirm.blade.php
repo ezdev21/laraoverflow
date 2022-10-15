@@ -3,7 +3,7 @@
 <div>
     <div class="sm:mx-auto sm:w-full sm:max-w-md">
         <a href="{{ route('home') }}">
-            <x-logo class="w-auto h-16 mx-auto text-primary-600" />
+            <x-logo class="w-auto h-16 mx-auto text-primary" />
         </a>
 
         <h2 class="mt-6 text-3xl font-extrabold text-center text-gray-900 leading-9">
@@ -23,7 +23,7 @@
                     </label>
 
                     <div class="mt-1 rounded-md shadow-sm">
-                        <input wire:model.lazy="password" id="password" name="password" type="password" required autofocus class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('password') border-red-300 text-red-900 placeholder-red-300 focus:border-red-300 focus:ring-red @enderror" />
+                        <input wire:model.lazy="password" id="password" name="password" type="password" required autofocus class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-primary focus:border-primary transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('password') border-red-300 text-red-900 placeholder-red-300 focus:border-red-300 focus:ring-red @enderror" />
                     </div>
 
                     @error('password')
@@ -33,7 +33,7 @@
 
                 <div class="flex items-center justify-end mt-6">
                     <div class="text-sm leading-5">
-                        <a href="{{ route('password.request') }}" class="font-medium text-primary-600 hover:text-primary-500 focus:outline-none focus:underline transition ease-in-out duration-150">
+                        <a href="{{ route('password.request') }}" class="font-medium text-primary hover:text-primary focus:outline-none focus:underline transition ease-in-out duration-150">
                             Forgot your password?
                         </a>
                     </div>
@@ -41,7 +41,7 @@
 
                 <div class="mt-6">
                     <span class="block w-full rounded-md shadow-sm">
-                        <button type="submit" class="flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-yellow-600 border border-transparent rounded-md hover:bg-yellow-500 focus:outline-none focus:border-primary focus:ring-yellow active:bg-yellow-700 transition duration-150 ease-in-out">
+                        <button type="submit" class="flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-primary border border-transparent rounded-md hover:bg-primary focus:outline-none focus:border-primary focus:ring-yellow active:bg-yellow-700 transition duration-150 ease-in-out">
                             Confirm password
                         </button>
                     </span>
