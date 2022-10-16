@@ -7,11 +7,11 @@ module.exports = {
                 sans: ['Inter var', ...defaultTheme.fontFamily.sans],
             },
             colors:{
-                'primary':'#ec7211',
+                'primary':'#d01f25',
                 'secondary':'teal'
             },
             backgroundColors:{
-                'primary':'#ec7211',
+                'primary':'#d01f25',
                 'secondary':'teal'
             }
         },

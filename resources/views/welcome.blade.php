@@ -21,7 +21,7 @@
                         <a href="{{ route('login') }}" class="font-medium text-primary focus:outline-none focus:underline transition ease-in-out duration-150">Log in</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="font-medium text-white bg-primary py-2 px-4rounded-xl focus:outline-none focus:underline transition ease-in-out duration-150">Register</a>
+                            <a href="{{ route('register') }}" class="font-medium text-white bg-primary py-2 px-4 rounded-md focus:outline-none focus:underline transition ease-in-out duration-150">Register</a>
                         @endif
                     @endauth
                 </div>
@@ -32,7 +32,7 @@
             <div class="flex flex-col justify-around">
                 <div class="space-y-6">
 
-                    <h1 style="color:#c5821e" class="text-5xl font-extrabold tracking-wider text-center text-gray-600">
+                    <h1 class="text-5xl font-extrabold tracking-wider text-center text-gray-600">
                         welcome to <span class="text-primary">Lara</span><span class="text-secondary">Overflow</span>
                     </h1>
 
