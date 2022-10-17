@@ -38,10 +38,10 @@
 
                     <ul class="list-reset">
                         <li class="inline px-4">
-                            <a href="" class="font-medium text-primary focus:outline-none focus:underline transition ease-in-out duration-150">Questions</a>
+                            <a href="{{route('questions.index')}}" class="font-medium text-primary focus:outline-none focus:underline transition ease-in-out duration-150">Questions</a>
                         </li>
                         <li class="inline px-4">
-                            <a href="" class="font-medium text-primary focus:outline-none focus:underline transition ease-in-out duration-150"></a>
+                            <a href="{{route('questions.create')}}" class="font-medium text-primary focus:outline-none focus:underline transition ease-in-out duration-150">Ask</a>
                         </li>
                         <li class="inline px-4">
                             <a href="" class="font-medium text-primary focus:outline-none focus:underline transition ease-in-out duration-150"></a>
