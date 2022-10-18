@@ -55,7 +55,7 @@
                     </div>
 
                     <div class="text-sm leading-5">
-                        <a href="{{ route('password.request') }}" class="font-medium text-primary hover:text-primary focus:outline-none focus:underline transition ease-in-out duration-150">
+                        <a href="{{ route('password.request') }}" class="font-medium text-primary focus:outline-none focus:underline transition ease-in-out duration-150">
                             Forgot your password?
                         </a>
                     </div>

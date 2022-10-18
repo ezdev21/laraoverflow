@@ -60,7 +60,7 @@ Route::middleware('auth')->group(function () {
         ->name('logout');
 });
 
-Route::prefix('question')->group(function(){
-    Route::get('index',Index::class)->name('questions.index');
+Route::prefix('questions')->group(function(){
+    Route::get('/',Index::class)->name('questions.index');
     Route::get('create',Create::class)->name('questions.create')->middleware('auth');
 });

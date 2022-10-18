@@ -18,10 +18,10 @@
                             @csrf
                         </form>
                     @else
-                        <a href="{{ route('login') }}" class="font-medium text-primary focus:outline-none focus:underline transition ease-in-out duration-150">Log in</a>
+                        <a href="{{ route('login') }}" class="font-medium text-primary py-2 px-4 rounded-md border border-primary focus:outline-none focus:underline transition ease-in-out duration-150">Log in</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="font-medium text-white bg-primary py-2 px-4 rounded-md focus:outline-none focus:underline transition ease-in-out duration-150">Register</a>
+                            <a href="{{ route('register') }}" class="font-medium text-white bg-primary py-2 px-4 rounded-md focus:outline-none focus:underline transition ease-in-out duration-150" style="background-color: darkorange">Register</a>
                         @endif
                     @endauth
                 </div>
@@ -33,24 +33,42 @@
                 <div class="space-y-6">
 
                     <h1 class="text-5xl font-extrabold tracking-wider text-center text-gray-600">
-                        welcome to <span class="text-primary">Lara</span><span class="text-secondary">Overflow</span>
+                        welcome to <span class="text-primary">LaraOverflow</span>
                     </h1>
 
-                    <ul class="list-reset">
-                        <li class="inline px-4">
+                    <ul class="list-reset flex space-x-5">
+                        <li>
                             <a href="{{route('questions.index')}}" class="font-medium text-primary focus:outline-none focus:underline transition ease-in-out duration-150">Questions</a>
                         </li>
-                        <li class="inline px-4">
+                        <li>
                             <a href="{{route('questions.create')}}" class="font-medium text-primary focus:outline-none focus:underline transition ease-in-out duration-150">Ask</a>
                         </li>
-                        <li class="inline px-4">
-                            <a href="" class="font-medium text-primary focus:outline-none focus:underline transition ease-in-out duration-150"></a>
+                        <li>
+                            <a href="" class="font-medium text-primary focus:outline-none focus:underline transition ease-in-out duration-150">About</a>
                         </li>
-                        <li class="inline px-4">
-                            <a href="" class="font-medium text-primary focus:outline-none focus:underline transition ease-in-out duration-150"></a>
+                        <li>
+                            <a href="https://github.com/ezra02/laraoverflow" class="font-medium text-primary focus:outline-none focus:underline transition ease-in-out duration-150">Star</a>
                         </li>
                     </ul>
                 </div>
+            </div>
+        </div>
+        <div class="flex justify-between space-x-5 m-14 text-2xl text-gray-700">
+            <div class="bg-white py-10 px-5 flex flex-col space-y-2 items-center rounded-xl border shadow-2xl" style="border-color: #1bb0b7">
+                <h1 class="text-4xl font-bold my-2" style="color: #1bb0b7">1000|500</h1>
+                <p>Tailwindcss Questions and Answers</p>
+            </div>
+            <div class="bg-white py-10 px-5 flex flex-col space-y-2 items-center rounded-xl border border-primary shadow-2xl" style="border-color: #7eb7c8">
+                <h1 class="text-4xl font-bold my-2" style="color: #7eb7c8">1000|500</h1>
+                <p>AlpineJs Questions and Answers</p>
+            </div>
+            <div class="bg-white py-10 px-5 flex flex-col space-y-2 items-center rounded-xl border border-primary shadow-2xl" style="border-color: #f9322c">
+                <h1 class="text-4xl font-bold my-2" style="color: #f9322c">1000|500</h1>
+                <p>Laravel Questions and Answers</p>
+            </div>
+            <div class="bg-white py-10 px-5 flex flex-col space-y-2 items-center rounded-xl border border-primary shadow-2xl" style="border-color: #fd6fab">
+                <h1 class="text-4xl font-bold my-2" style="color: #fd6fab">1000|500</h1>
+                <p>Livewire Questions and Answers</p>
             </div>
         </div>
     </div>

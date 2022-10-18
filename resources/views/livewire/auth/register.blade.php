@@ -3,19 +3,19 @@
 <div>
     <div class="sm:mx-auto sm:w-full sm:max-w-md">
 
-        <h2 class="mt-6 text-3xl font-extrabold text-center text-gray-900 leading-9">
+        <h2 class="mt-1 text-3xl font-extrabold text-center text-gray-900 leading-9">
             Create a new account
         </h2>
 
         <p class="mt-2 text-sm text-center text-gray-600 leading-5 max-w">
             Or
-            <a href="{{ route('login') }}" class="font-medium text-primary hover:text-primary focus:outline-none focus:underline transition ease-in-out duration-150">
+            <a href="{{ route('login') }}" class="font-medium text-primary focus:outline-none focus:underline transition ease-in-out duration-150">
                 sign in to your account
             </a>
         </p>
     </div>
 
-    <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+    <div class="mt-5 sm:mx-auto sm:w-full sm:max-w-md">
         <div class="px-4 py-8 bg-white shadow sm:rounded-lg sm:px-10">
             <form wire:submit.prevent="register">
                 <div>
