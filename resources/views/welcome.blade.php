@@ -53,7 +53,7 @@
                 </div>
             </div>
         </div>
-        <div class="flex justify-between space-x-5 m-14 text-2xl text-gray-700">
+        <div class="flex wrap justify-between space-x-5 m-14 text-2xl text-gray-700">
             <div class="bg-white py-10 px-5 flex flex-col space-y-2 items-center rounded-xl border shadow-2xl" style="border-color: #1bb0b7">
                 <h1 class="text-4xl font-bold my-2" style="color: #1bb0b7">1000|500</h1>
                 <p>Tailwindcss Questions and Answers</p>
