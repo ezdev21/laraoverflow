@@ -46,6 +46,16 @@ class User extends Authenticatable implements FilamentUser
 
     public function canAccessFilament():bool
     {
-      return str_ends_with($this->email,'@stackoverflow.com') && $this->hasVerfiedEmail();
+      return str_ends_with($this->email,'@laraoverflow.com'); //&& $this->hasVerfiedEmail();
+    }
+
+    public function getCreatedAtDiffAttribute()
+    {
+        return $this->created_at->diffForHumans();
+    }
+
+    public function getUpdatedAtDiffAttribute()
+    {
+        return $this->updated_at->diffForHumans();
     }
 }
