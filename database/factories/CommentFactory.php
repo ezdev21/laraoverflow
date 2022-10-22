@@ -17,8 +17,8 @@ class CommentFactory extends Factory
     public function definition()
     {
         return [
-            'user_id'=>fake()->integer,
-            'question_id'=>fake()->integer,
+            'user_id'=>fake()->numberBetween(1,10),
+            'question_id'=>fake()->numberBetween(1,10),
             'comment'=>fake()->Str::random(30)
         ];
     }

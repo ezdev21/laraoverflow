@@ -17,8 +17,8 @@ class QuestionFactory extends Factory
     public function definition()
     {
         return [
-            'user_id'=>fake()->integer(),
-            'category_id'=>fake()->integer(),
+            'user_id'=>fake()->numberBetween(1,10),
+            'category_id'=>fake()->numberBetween(1,10),
             'title'=>Str::random(30),
             'description'=>Str::random(200)
         ];

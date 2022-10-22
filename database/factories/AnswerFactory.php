@@ -17,7 +17,7 @@ class AnswerFactory extends Factory
     public function definition()
     {
         return [
-            'user_id'=>fake()->integer(),
+            'user_id'=>fake()->numberBetween(1,10),
             'question_id'=>fake()->integer(),
             'answer'=>Str::random(30)
         ];
