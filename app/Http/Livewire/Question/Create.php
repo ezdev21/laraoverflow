@@ -8,7 +8,7 @@ use Livewire\Component;
 
 class Create extends Component
 {
-    public $question=['title'=>'','description'=>''];
+    public $question=['title'=>'','description'=>'','category_id'=>'0'];
 
     public function render()
     {
@@ -19,8 +19,9 @@ class Create extends Component
     {
        Question::create([
         'user_id'=>auth()->user()->id,
+        'category_id'=>$this->question['category_id'],
         'title'=>$this->question['title'],
-        'descirption'=>$this->question['description'],
+        'description'=>$this->question['description'],
        ]);
        return redirect()->route('home');
     }

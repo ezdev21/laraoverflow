@@ -11,7 +11,7 @@ class Index extends Component
 
     public function mount()
     {
-      $this->questions=Question::latest()->limit(100)->withCount('answers')->paginate(16);
+      $this->questions=Question::latest()->limit(100)->withCount('answers')->get();
     }
 
     public function render()

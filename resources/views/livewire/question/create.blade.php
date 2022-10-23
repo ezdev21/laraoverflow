@@ -3,15 +3,15 @@
 <div>
     <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
         <div class="px-4 py-8 bg-white shadow sm:rounded-lg sm:px-10">
-            <h1 class="text-3xl py-2 my-2">Ask new question here</h1><hr>
-            <form wire:submit.prevent="ask">
+            <h1 class="text-3xl py-2">Ask new question here</h1><hr>
+            <form wire:submit.prevent="ask" class="my-2">
                 <div>
                     <label for="email" class="block text-sm font-medium text-gray-700 leading-5">
                         Title
                     </label>
 
                     <div class="mt-1 rounded-md shadow-sm">
-                        <input wire:model.lazy="question.title" id="title" name="title" type="text" required autofocus class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-primary focus:border-primary transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('email') border-red-300 text-red-900 placeholder-red-300 focus:border-red-300 focus:ring-red @enderror" />
+                        <input wire:model.lazy="question.title" id="title" name="title" type="text" required autofocus placeholder="title" class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-primary focus:border-primary transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('email') border-red-300 text-red-900 placeholder-red-300 focus:border-red-300 focus:ring-red @enderror" />
                     </div>
 
                     @error('question.title')
@@ -25,7 +25,7 @@
                     </label>
 
                     <div class="mt-1 rounded-md shadow-sm">
-                        <textarea wire:model.lazy="question.description" id="description" required rows="5"
+                        <textarea wire:model.lazy="question.description" id="description" required placeholder="description" rows="5"
                           class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-primary focus:border-primary transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('password') border-red-300 text-red-900 placeholder-red-300 focus:border-red-300 focus:ring-red @enderror">
                         </textarea>
                     </div>
