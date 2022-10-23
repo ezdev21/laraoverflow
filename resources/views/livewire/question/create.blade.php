@@ -1,8 +1,10 @@
 @section('title', 'ask new question')
+@extends('layouts.app')
+@section('content')
 
 <div>
-    <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-        <div class="px-4 py-8 bg-white shadow sm:rounded-lg sm:px-10">
+    <div class="sm:mx-auto sm:w-full sm:max-w-md">
+        <div class="px-4 bg-white shadow sm:rounded-lg sm:px-10">
             <h1 class="text-3xl py-2">Ask new question here</h1><hr>
             <form wire:submit.prevent="ask" class="my-2">
                 <div>
@@ -46,3 +48,4 @@
         </div>
     </div>
 </div>
+@endsection

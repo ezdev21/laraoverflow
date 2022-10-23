@@ -1,5 +1,8 @@
 @section('title', 'questions')
 
+@extends('layouts.app')
+@section('content')
+
 <div class="w-full mx-auto">
   <div class="flex flex-wrap p-2">
     @forelse ($questions as $question)
@@ -14,3 +17,4 @@
     @endforelse
   </div>
 </div>
+@endsection

@@ -2,31 +2,6 @@
 
 @section('content')
     <div class="flex flex-col justify-center min-h-screen py-12 sm:px-6 lg:px-8">
-        <div class="absolute top-0 right-0 mt-4 mr-4">
-            @if (Route::has('login'))
-                <div class="space-x-4">
-                    @auth
-                        <a
-                            href="{{ route('logout') }}"
-                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
-                            class="font-medium primary focus:outline-none focus:underline transition ease-in-out duration-150"
-                        >
-                            Log out
-                        </a>
-
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                        </form>
-                    @else
-                        <a href="{{ route('login') }}" class="font-medium text-primary py-2 px-4 rounded-md border border-primary focus:outline-none focus:underline transition ease-in-out duration-150">Log in</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="font-medium text-white bg-primary py-2 px-4 rounded-md focus:outline-none focus:underline transition ease-in-out duration-150" style="background-color: darkorange">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-        </div>
 
         <div class="flex justify-center shadow-md">
             <div class="w-1/4">
@@ -35,7 +10,7 @@
             <div class="flex flex-col justify-around">
                 <div class="space-y-6">
 
-                    <h1 class="text-5xl font-extrabold tracking-wider text-center text-gray-600">
+                    <h1 class="text-5xl font-extrabold tracking-wider text-center text-gray-500">
                         welcome to <span class="text-primary">LaraOverflow</span>
                     </h1>
 
