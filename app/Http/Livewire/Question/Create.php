@@ -23,6 +23,6 @@ class Create extends Component
         'title'=>$this->question['title'],
         'description'=>$this->question['description'],
        ]);
-       return redirect()->route('home');
+       return redirect()->route('question.index')->with('message','question created successfully');
     }
 }

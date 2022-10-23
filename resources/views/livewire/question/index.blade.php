@@ -1,7 +1,7 @@
 @section('title', 'questions')
 
-<div>
-  <div class="flex flex-wrap p-2 justify-center">
+<div class="w-full mx-auto">
+  <div class="flex flex-wrap p-2">
     @forelse ($questions as $question)
     <div class="p-3 m-3 shadow-xl rounded-xl bg-white w-full lg:w-5/12">
       <h1 class="font-medium text-xl">{{$question->title}}</h1>
