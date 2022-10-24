@@ -30,7 +30,7 @@ class QuestionPolicy
      */
     public function view(User $user, Question $question)
     {
-        //
+        return true;
     }
 
     /**
@@ -41,7 +41,7 @@ class QuestionPolicy
      */
     public function create(User $user)
     {
-        //
+        return $user;
     }
 
     /**
@@ -53,7 +53,7 @@ class QuestionPolicy
      */
     public function update(User $user, Question $question)
     {
-        //
+        return $user->id==$question->user->id || str_ends_with($this->email,'@laraoverflow.com');
     }
 
     /**
@@ -65,7 +65,7 @@ class QuestionPolicy
      */
     public function delete(User $user, Question $question)
     {
-        //
+        return $user->id==$question->user->id || str_ends_with($this->email,'@laraoverflow.com');
     }
 
     /**
@@ -77,7 +77,7 @@ class QuestionPolicy
      */
     public function restore(User $user, Question $question)
     {
-        //
+        return $user->id==$question->user->id || str_ends_with($this->email,'@laraoverflow.com');
     }
 
     /**
@@ -89,6 +89,6 @@ class QuestionPolicy
      */
     public function forceDelete(User $user, Question $question)
     {
-        //
+        return $user->id==$question->user->id || str_ends_with($this->email,'@laraoverflow.com');
     }
 }

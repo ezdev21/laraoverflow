@@ -30,7 +30,7 @@ class TagPolicy
      */
     public function view(User $user, Tag $tag)
     {
-        //
+        return true;
     }
 
     /**
@@ -41,7 +41,7 @@ class TagPolicy
      */
     public function create(User $user)
     {
-        //
+        return $user;
     }
 
     /**
@@ -53,7 +53,7 @@ class TagPolicy
      */
     public function update(User $user, Tag $tag)
     {
-        //
+        return $user->id==$tag->user->id || str_ends_with($this->email,'@laraoverflow.com');
     }
 
     /**
@@ -65,7 +65,7 @@ class TagPolicy
      */
     public function delete(User $user, Tag $tag)
     {
-        //
+        return $user->id==$tag->user->id || str_ends_with($this->email,'@laraoverflow.com');
     }
 
     /**
@@ -77,7 +77,7 @@ class TagPolicy
      */
     public function restore(User $user, Tag $tag)
     {
-        //
+        return $user->id==$tag->user->id || str_ends_with($this->email,'@laraoverflow.com');
     }
 
     /**
@@ -89,6 +89,6 @@ class TagPolicy
      */
     public function forceDelete(User $user, Tag $tag)
     {
-        //
+        return $user->id==$tag->user->id || str_ends_with($this->email,'@laraoverflow.com');
     }
 }
