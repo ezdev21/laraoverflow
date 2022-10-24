@@ -5,7 +5,7 @@
 
         <div class="flex justify-center shadow-md">
             <div class="w-1/4">
-                <img src="favicon.png" alt="" class="-rotate-12">
+                <img src="favicon.png" alt="" class="">
             </div>
             <div class="flex flex-col justify-around">
                 <div class="space-y-6">

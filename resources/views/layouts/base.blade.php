@@ -25,7 +25,7 @@
     </head>
 
     <body class="bg-gray-100">
-        <div class="flex items-center justify-around bg-white mb-2">
+        <div class="flex items-center justify-around bg-white">
             <div>
                 <a href="/" class="flex items-center">
                     <img src="/favicon.png" alt="app logo" class="w-20">
@@ -61,7 +61,7 @@
                             <a href="{{ route('login') }}" class="font-medium text-primary py-2.5 px-5 rounded-md border border-primary focus:outline-none focus:underline transition ease-in-out duration-150">Log in</a>
 
                             @if (Route::has('register'))
-                                <a href="{{ route('register') }}" class="font-medium text-white bg-primary py-2.5 px-5 rounded-md focus:outline-none focus:underline transition ease-in-out duration-150" style="background-color: darkorange">Register</a>
+                                <a href="{{ route('register') }}" class="font-medium text-white bg-primary py-2.5 px-5 rounded-md focus:outline-none focus:underline transition ease-in-out duration-150">Register</a>
                             @endif
                         @endauth
                     </div>

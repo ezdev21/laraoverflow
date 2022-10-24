@@ -34,4 +34,13 @@ class Question extends Model
           'description'=>$this->description
         ];
     }
+    public function getCreatedAtDiffAttribute()
+    {
+        return $this->created_at->diffForHumans();
+    }
+
+    public function getUpdatedAtDiffAttribute()
+    {
+        return $this->updated_at->diffForHumans();
+    }
 }
