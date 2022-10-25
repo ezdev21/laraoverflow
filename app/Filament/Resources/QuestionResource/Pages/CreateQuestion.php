@@ -10,7 +10,8 @@ class CreateQuestion extends CreateRecord
 {
     protected static string $resource = QuestionResource::class;
 
-    public function getRedirectUrl():string{
+    public function getRedirectUrl():string
+    {
       return $this->getResource()::getUrl('index');
     }
 }

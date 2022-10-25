@@ -10,7 +10,8 @@ class CreateUser extends CreateRecord
 {
     protected static string $resource = UserResource::class;
 
-    public function getRedirectUrl():string{
+    public function getRedirectUrl():string
+    {
       return $this->getResource()::getUrl('index');
     }
 }

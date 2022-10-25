@@ -32,19 +32,19 @@
             </div>
         </div>
         <div class="flex wrap justify-between space-x-5 m-14 text-2xl text-gray-700">
-            <div class="bg-white py-10 px-5 flex flex-col space-y-2 items-center rounded-xl border border-primary shadow-2xl">
+            <div class="bg-white py-10 px-5 flex flex-col space-y-2 items-center rounded-xl shadow-primary shadow-2xl">
                 <h1 class="text-4xl font-bold my-2 text-primary">1000|500</h1>
                 <p>Tailwindcss Questions and Answers</p>
             </div>
-            <div class="bg-white py-10 px-5 flex flex-col space-y-2 items-center rounded-xl border border-primary shadow-2xl">
+            <div class="bg-white py-10 px-5 flex flex-col space-y-2 items-center rounded-xl shadow-primary shadow-2xl">
                 <h1 class="text-4xl font-bold my-2 text-primary">1000|500</h1>
                 <p>AlpineJs Questions and Answers</p>
             </div>
-            <div class="bg-white py-10 px-5 flex flex-col space-y-2 items-center rounded-xl border border-primary shadow-2xl">
+            <div class="bg-white py-10 px-5 flex flex-col space-y-2 items-center rounded-xl shadow-primary shadow-2xl">
                 <h1 class="text-4xl font-bold my-2 text-primary">1000|500</h1>
                 <p>Laravel Questions and Answers</p>
             </div>
-            <div class="bg-white py-10 px-5 flex flex-col space-y-2 items-center rounded-xl border border-primary shadow-2xl" style="border-color: #fd6fab">
+            <div class="bg-white py-10 px-5 flex flex-col space-y-2 items-center rounded-xl shadow-primary shadow-2xl">
                 <h1 class="text-4xl font-bold my-2 text-primary">1000|500</h1>
                 <p>Livewire Questions and Answers</p>
             </div>
