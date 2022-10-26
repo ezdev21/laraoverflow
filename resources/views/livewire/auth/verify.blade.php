@@ -1,4 +1,6 @@
 @section('title', 'Verify your email address')
+@extends('layouts.app')
+@section('content')
 
 <div>
     <div class="sm:mx-auto sm:w-full sm:max-w-md">
@@ -44,3 +46,4 @@
         </div>
     </div>
 </div>
+@endsection

@@ -24,7 +24,7 @@
     </head>
 
     <body class="bg-gray-200">
-        <div class="flex items-center justify-around bg-white">
+        <div class="flex items-center justify-around bg-white w-full fixed">
             <div>
                 <a href="/" class="flex items-center">
                     <img src="/favicon.png" alt="app logo" class="w-20">

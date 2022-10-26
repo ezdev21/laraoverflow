@@ -1,4 +1,6 @@
 @section('title', 'Confirm your password')
+@extends('layouts.app')
+@section('content')
 
 <div>
     <div class="sm:mx-auto sm:w-full sm:max-w-md">
@@ -50,3 +52,4 @@
         </div>
     </div>
 </div>
+@endsection
