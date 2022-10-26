@@ -12,6 +12,7 @@ use App\Http\Livewire\Auth\Verify;
 use App\Http\Livewire\Question\Create;
 use App\Http\Livewire\Question\Edit;
 use App\Http\Livewire\Question\Index;
+use App\Http\Livewire\Question\Show;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Route;
 
@@ -64,5 +65,6 @@ Route::middleware('auth')->group(function () {
 Route::prefix('questions')->group(function(){
     Route::get('/',Index::class)->name('questions.index');
     Route::get('create',Create::class)->name('questions.create')->middleware('auth');
+    Route::get('{question}',Show::class);
     Route::get('{question}/edit',Edit::class);
 });
