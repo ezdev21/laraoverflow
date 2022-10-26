@@ -18,4 +18,14 @@ class Show extends Component
     {
         $this->$question=$question;
     }
+
+    public function upVote()
+    {
+       $this->questions()->attach();
+    }
+
+    public function downVote()
+    {
+
+    }
 }
