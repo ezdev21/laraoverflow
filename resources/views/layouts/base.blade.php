@@ -67,7 +67,7 @@
                 @endif
             </div>
         </div>
-        <div class="px-10">
+        <div class="px-10 pt-14">
             @yield('body')
         </div>
     </body>

@@ -21,11 +21,17 @@ class Show extends Component
 
     public function upVote()
     {
-       $this->questions()->attach();
+       $this->question->users()->attach([
+        'user_id'=>auth()->id,
+        'type'=>'like'
+       ]);
     }
 
     public function downVote()
     {
-
+        $this->question->users()->attach([
+          'user_id'=>auth()->id,
+          'type'=>'dislike'
+        ]);
     }
 }

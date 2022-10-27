@@ -12,6 +12,8 @@ class Question extends Model
 
     protected $guarded=[];
 
+    protected $appends=['totalLikes','totalDislikes'];
+
     public function answers()
     {
       return $this->hasMany(Answer::class);
@@ -42,5 +44,19 @@ class Question extends Model
     public function getUpdatedAtDiffAttribute()
     {
         return $this->updated_at->diffForHumans();
+    }
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
+
+    public function getTotalLikesAttribute()
+    {
+        return $this->users()->where('type','like')->count();
+    }
+    public function getTotalDislikesAttribute()
+    {
+        return $this->users()->where('type','dislike')->count();
     }
 }
