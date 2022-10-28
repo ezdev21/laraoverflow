@@ -10,6 +10,8 @@ class Tag extends Model
 {
     use HasFactory,Searchable;
 
+    protected $guarded=[];
+
     public function questions()
     {
         return $this->belongsToMany(Question::class);

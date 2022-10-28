@@ -13,6 +13,8 @@ use App\Http\Livewire\Question\Create;
 use App\Http\Livewire\Question\Edit;
 use App\Http\Livewire\Question\Index;
 use App\Http\Livewire\Question\Show;
+use App\Models\Question;
+use App\Models\Tag;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Route;
 
@@ -28,7 +30,51 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::view('/', 'welcome')->name('home');
+Route::get('/', function(){
+    // count total tailwindcss questions and answers
+    $tailwindTag=Tag::where('name','tailwindcss')->first();
+    $tailwindQuestions=$tailwindTag->questions()->get();
+    $totalTailwindQuestions=$tailwindQuestions->count();
+    $totalTailwindAnswers=0;
+    foreach ($tailwindQuestions as $tailwindQuestion) {
+      $totalTailwindAnswers+=$tailwindQuestion->answers()->count();
+    }
+    // count total alpine questions and answers
+    $alpineJsTag=Tag::where('name','alpineJs')->first();
+    $alpineJsQuestions=$alpineJsTag->questions()->get();
+    $totalAlpineJsQuestions=$alpineJsQuestions->count();
+    $totalAlpineJsAnswers=0;
+    foreach ($alpineJsQuestions as $alpineJsQuestion) {
+      $totalAlpineJsAnswers+=$alpineJsQuestion->answers()->count();
+    }
+    // count total laravel questions and answers
+    $laravelTag=Tag::where('name','laravel')->first();
+    $laravelQuestions=$laravelTag->questions()->get();
+    $totalLaravelQuestions=$laravelQuestions->count();
+    $totalLaravelAnswers=0;
+    foreach ($laravelQuestions as $laravelQuestion) {
+      $totalLaravelAnswers+=$laravelQuestion->answers()->count();
+    }
+    // count total livewire questions and answers
+    $livewireTag=Tag::where('name','livewire')->first();
+    $livewireQuestions=$livewireTag->questions()->get();
+    $totalLivewireQuestions=$livewireQuestions->count();
+    $totalLivewireAnswers=0;
+    foreach ($livewireQuestions as $livewireQuestion) {
+      $totalLivewireAnswers+=$livewireQuestion->answers()->count();
+    }
+
+    return view('welcome',[
+        'totalTailwindQuestions'=>$totalTailwindQuestions,
+        'totalTailwindAnswers'=>$totalTailwindAnswers,
+        'totalAlpineJsQuestions'=>$totalAlpineJsQuestions,
+        'totalAlpineJsAnswers'=>$totalAlpineJsAnswers,
+        'totalLaravelQuestions'=>$totalLaravelQuestions,
+        'totalLaravelAnswers'=>$totalLaravelAnswers,
+        'totalLivewireQuestions'=>$totalLivewireQuestions,
+        'totalLivewireAnswers'=>$totalLivewireAnswers
+    ]);
+})->name('home');
 
 Route::middleware('guest')->group(function () {
     Route::get('login', Login::class)
