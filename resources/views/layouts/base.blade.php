@@ -24,7 +24,7 @@
     </head>
 
     <body class="bg-gray-200">
-        <div class="flex items-center justify-around bg-white w-full fixed">
+        <div class="flex items-center justify-around bg-white fixed w-full top-0 oerflow-hidden">
             <div>
                 <a href="/" class="flex items-center">
                     <img src="/favicon.png" alt="app logo" class="w-20">
@@ -57,17 +57,17 @@
                                 @csrf
                             </form>
                         @else
-                            <a href="{{ route('login') }}" class="font-medium text-primary py-2.5 px-5 rounded-md border-2 border-primary focus:outline-none focus:underline transition ease-in-out duration-150">Log in</a>
+                            <a href="{{ route('login') }}" class="font-semibold text-primary py-2.5 px-5 rounded-md border-2 border-primary focus:outline-none focus:underline transition ease-in-out duration-150">Log in</a>
 
                             @if (Route::has('register'))
-                                <a href="{{ route('register') }}" class="font-medium text-white bg-primary py-2.5 px-5 rounded-md focus:outline-none focus:underline transition ease-in-out duration-150">Register</a>
+                                <a href="{{ route('register') }}" class="font-semibold text-white bg-primary py-2.5 px-5 rounded-md focus:outline-none focus:underline transition ease-in-out duration-150">Sign up</a>
                             @endif
                         @endauth
                     </div>
                 @endif
             </div>
         </div>
-        <div class="px-10 pt-14">
+        <div class="px-10" style="margin-top: 80px;">
             @yield('body')
         </div>
     </body>
