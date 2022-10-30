@@ -3,8 +3,8 @@
 @extends('layouts.app')
 @section('content')
 
-<div>
-  <div class="flex flex-wrap py-2">
+<div class="flex">
+  <div class="w-5/6 flex flex-wrap py-2">
     @forelse ($questions as $question)
     <div class="p-3 m-3 shadow-xl rounded-xl bg-white w-full lg:w-5/12">
       <a href="/questions/{{$question->id}}">
@@ -15,8 +15,14 @@
       </a>
     </div>
     @empty
-      <p class="text-2xl text-center">No asked questions yet!</p>
+      <p class="text-2xl text-center">No asked questions found yet!</p>
     @endforelse
+    <div>
+        {{$questions->links()}}
+    </div>
+  </div>
+  <div class="w-1/6">
+   
   </div>
 </div>
 @endsection
