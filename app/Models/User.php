@@ -58,4 +58,9 @@ class User extends Authenticatable implements FilamentUser
     {
         return $this->updated_at->diffForHumans();
     }
+
+    public function teams()
+    {
+        return $this->belongsToMany(Team::class);
+    }
 }
