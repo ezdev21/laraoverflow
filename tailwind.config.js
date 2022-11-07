@@ -5,9 +5,10 @@ module.exports = {
         extend: {
             fontFamily: {
                 sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+                logo:['Pacifico']
             },
             colors:{
-                'primary':'#23b7c2',
+                'primary':'#ff5722',
                 'secondary':''
             },
             backgroundColors:{

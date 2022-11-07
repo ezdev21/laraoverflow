@@ -14,6 +14,9 @@
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 
         @vite(['resources/sass/app.scss', 'resources/js/app.js'])
         @livewireStyles
@@ -28,7 +31,7 @@
             <div>
                 <a href="/" class="flex items-center">
                     <img src="/favicon.png" alt="app logo" class="w-20">
-                    <span class="text-4xl font-bold text-gray-500">Lara<span class="text-primary">Overflow</span></span>
+                    <span class="text-3xl font-bold text-gray-500 font-logo">Lara<span class="text-primary">Overflow</span></span>
                 </a>
             </div>
             <div class="rounded-xl my-auto py-auto mx-3">
