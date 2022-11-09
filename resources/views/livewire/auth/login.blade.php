@@ -4,7 +4,7 @@
 
 <div>
     <div class="sm:mx-auto sm:w-full sm:max-w-md">
-        <h2 class="mt-6 text-3xl font-extrabold text-center text-gray-900 leading-9">
+        <h2 class="mt-6 text-3xl font-extrabold text-center text-gray-600 leading-9">
             Sign in to your account
         </h2>
         @if (Route::has('register'))

@@ -10,11 +10,11 @@
             <div class="flex flex-col justify-around">
                 <div class="space-y-6">
 
-                    <h1 class="text-5xl font-extrabold tracking-wider text-center text-gray-500">
+                    <h1 class="text-5xl font-extrabold tracking-wider text-center text-gray-600">
                         welcome to <span class="text-primary">LaraOverflow</span>
                     </h1>
 
-                    <ul class="list-reset flex space-x-5">
+                    <ul class="list-reset flex space-x-5 text-xl">
                         <li>
                             <a href="{{route('questions.index')}}" class="font-medium text-primary focus:outline-none focus:underline transition ease-in-out duration-150">Questions</a>
                         </li>

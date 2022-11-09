@@ -20,6 +20,11 @@ class Answer extends Model
         return $this->morphMany(Comment::class,'commentable');
     }
 
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
+
     public function toSearchableArray()
     {
         return[
