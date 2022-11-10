@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="flex flex-col justify-center min-h-screen py-12 sm:px-6 lg:px-8">
+    <div class="bg-home bg-cover flex flex-col justify-center min-h-screen py-12 sm:px-6 lg:px-8">
 
         <div class="flex justify-center shadow-md">
             <div class="w-1/4">
@@ -16,16 +16,16 @@
 
                     <ul class="list-reset flex space-x-5 text-xl">
                         <li>
-                            <a href="{{route('questions.index')}}" class="font-medium text-primary focus:outline-none focus:underline transition ease-in-out duration-150">Questions</a>
+                            <a href="{{route('questions.index')}}" class="font-medium text-primary hover:border-b-4 hover:border-primary">Questions</a>
                         </li>
                         <li>
-                            <a href="{{route('questions.create')}}" class="font-medium text-primary focus:outline-none focus:underline transition ease-in-out duration-150">Ask</a>
+                            <a href="{{route('questions.create')}}" class="font-medium text-primary hover:border-b-4 hover:border-primary">Ask</a>
                         </li>
                         <li>
-                            <a href="" class="font-medium text-primary focus:outline-none focus:underline transition ease-in-out duration-150">About</a>
+                            <a href="" class="font-medium text-primary hover:border-b-4 hover:border-primary">About</a>
                         </li>
                         <li>
-                            <a href="https://github.com/ezra02/laraoverflow" class="font-medium text-primary focus:outline-none focus:underline transition ease-in-out duration-150">Star</a>
+                            <a href="https://github.com/ezra02/laraoverflow" class="font-medium text-primary hover:border-b-4 hover:border-primary">Star</a>
                         </li>
                     </ul>
                 </div>

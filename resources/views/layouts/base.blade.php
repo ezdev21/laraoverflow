@@ -70,7 +70,7 @@
                 @endif
             </div>
         </div>
-        <div class="px-10" style="margin-top: 80px;">
+        <div class="px-10 mt-20">
             @yield('body')
         </div>
     </body>

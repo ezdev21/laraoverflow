@@ -45,7 +45,7 @@
           </textarea>
         </form>
       @else
-      <p><a href="/login" class="text-primary">login</a> to answer  this question</p>
+      <p><a href="/login" class="text-primary text-xl">login</a> to answer  this question</p>
       @endauth
     </div>
     <div x-data="{answers:{{$question->answers}}}">
