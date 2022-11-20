@@ -17,13 +17,13 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         @vite(['resources/sass/app.scss', 'resources/js/app.js'])
         @livewireStyles
         @livewireScripts
-
+        {{-- <livewire:styles />
+        <livewire:scripts /> --}}
         <!-- CSRF Token -->
-        <meta name="csrf-token" content="{{ csrf_token() }}">
     </head>
 
     <body class="bg-gray-200">
@@ -34,9 +34,9 @@
                     <span class="text-3xl font-bold text-gray-600 font-logo">Lara<span class="text-primary">Overflow</span></span>
                 </a>
             </div>
-            <div class="rounded-xl my-auto py-auto mx-3">
+            <div class="rounded-xl my-auto py-auto mx-3 hidden lg:inline">
               <form @submit.prevent="search" class="flex rounded-md">
-                 <input type="search" v-model="searchQuery" required class="w-96 py-1.5 px-2 text-lg outline-none rounded-l-md focus:outline-none focus:ring-primary border-gray-300 focus:border-primary" placeholder="search LaraOverflow">
+                 <input type="search" v-model="searchQuery" required class="bg-gray-300 focus:bg-white w-96 py-1.5 px-2 text-lg outline-none rounded-l-md focus:outline-none focus:ring-primary border-gray-300 focus:border-primary" placeholder="search LaraOverflow">
                  <button type="submit" class="bg-primary text-xl py-1.5 px-5 my-auto rounded-r-md" >
                    <svg xmlns="http://www.w3.org/2000/svg" class="text-white h-8 w-8 font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />

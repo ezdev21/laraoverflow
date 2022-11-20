@@ -14,13 +14,10 @@ class Show extends Component
         return view('livewire.question.show');
     }
 
-    public function mount(Question $question)
-    {
-        $this->$question=$question;
-    }
 
     public function upVote()
     {
+       dd('upvoting');
        $this->question->users()->attach([
         'user_id'=>auth()->id,
         'type'=>'like'
@@ -29,6 +26,7 @@ class Show extends Component
 
     public function downVote()
     {
+        dd('downvoting');
         $this->question->users()->attach([
           'user_id'=>auth()->id,
           'type'=>'dislike'

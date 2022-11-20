@@ -12,7 +12,7 @@ class Question extends Model
 
     protected $guarded=[];
 
-    protected $appends=['totalLikes','totalDislikes'];
+    protected $appends=['totalUpVote','totalDownVote'];
 
     public function answers()
     {
@@ -51,11 +51,12 @@ class Question extends Model
         return $this->belongsToMany(User::class);
     }
 
-    public function getTotalLikesAttribute()
+    public function getTotalUpVoteAttribute()
     {
         return $this->users()->where('type','like')->count();
     }
-    public function getTotalDislikesAttribute()
+
+    public function getTotalDownVoteAttribute()
     {
         return $this->users()->where('type','dislike')->count();
     }

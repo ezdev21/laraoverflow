@@ -8,16 +8,13 @@ module.exports = {
                 logo:['Pacifico']
             },
             colors:{
-                'primary':'#00a9a8',
-                'secondary':''
+                'primary':'#fb6541',
+                'secondary':'#00a9a8'
             },
             backgroundColors:{
-                'primary':'#00a9a8',
-                'secondary':'',
+                'primary':'#fb6541',
+                'secondary':'#00a9a8',
             },
-            backgroundImage:{
-              "home" : "url('https://jooinn.com/images/discussion-1.jpg')"
-            }
         },
     },
     variants: {
