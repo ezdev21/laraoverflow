@@ -1,6 +1,6 @@
-@section('title', $question->title)
+{{-- @section('title', $question->title)
 @extends('layouts.app')
-@section('content')
+@section('content') --}}
 <div class="m-5">
     <div class="p-3 mb-5 shadow-xl rounded-xl bg-white w-full lg:w-5/12">
       <h1 class="font-medium text-xl">{{$question->title}}</h1>
@@ -13,7 +13,7 @@
           </svg>
         </button>
         <span class="text-xl mr-2 my-auto">{{$question->totalUpVote}}</span>
-        <button wire:click="downVote">
+        <button wire:click.prevent="downVote">
           <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="h-10 w-10 @if($question->disliked) text-primary @else text-gray-400 @endif" viewBox="0 0 16 16">
             <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
           </svg>
@@ -79,4 +79,4 @@
       @endforelse
     </div>
 </div>
-@endsection
+{{-- @endsection --}}

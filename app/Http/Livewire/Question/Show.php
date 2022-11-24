@@ -17,7 +17,6 @@ class Show extends Component
 
     public function upVote()
     {
-       dd('upvoting');
        $this->question->users()->attach([
         'user_id'=>auth()->id,
         'type'=>'like'
@@ -26,7 +25,6 @@ class Show extends Component
 
     public function downVote()
     {
-        dd('downvoting');
         $this->question->users()->attach([
           'user_id'=>auth()->id,
           'type'=>'dislike'
