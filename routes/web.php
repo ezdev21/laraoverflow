@@ -114,3 +114,10 @@ Route::prefix('questions')->group(function(){
     Route::get('{question}',Show::class);
     Route::get('{question}/edit',Edit::class);
 });
+
+Route::prefix('teams')->group(function(){
+    Route::get('/',Index::class)->name('teams.index');
+    Route::get('create',Create::class)->name('teams.create')->middleware('auth');
+    Route::get('{question}',Show::class);
+    Route::get('{question}/edit',Edit::class);
+});

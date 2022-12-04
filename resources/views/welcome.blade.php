@@ -18,6 +18,9 @@
                             <a href="{{route('questions.index')}}" class="font-medium hover:border-b-4 hover:border-gray-500">Questions</a>
                         </li>
                         <li>
+                            <a href="{{route('teams.index')}}" class="font-medium hover:border-b-4 hover:border-gray-500">Teams</a>
+                        </li>
+                        <li>
                             <a href="{{route('questions.create')}}" class="font-medium hover:border-b-4 hover:border-gray-500">Ask</a>
                         </li>
                         <li>
