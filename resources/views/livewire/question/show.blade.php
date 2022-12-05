@@ -48,7 +48,7 @@
       @auth
         <h1 class="text-2xl">submit your answer here</h1>
         <form @submt.prevent="answer" method="post">
-          <textarea :model="answer" class="p-2 w-96 h-32 rounded-xl border border-gray-300">
+          <textarea :model="answer" class="w-5/12 h-32 rounded-xl border border-gray-300 focus:border-primary focus:ring-primary">
           </textarea>
         </form>
       @else

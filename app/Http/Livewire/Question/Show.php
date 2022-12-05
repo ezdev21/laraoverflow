@@ -14,20 +14,26 @@ class Show extends Component
         return view('livewire.question.show');
     }
 
-
     public function upVote()
     {
-       $this->question->users()->attach([
-        'user_id'=>auth()->id,
-        'type'=>'like'
-       ]);
+       $liked=$this->question->users()->where([['user_id',auth()->user()->id],['type','like']])->count();
+       if($liked){
+          $this->question->users()->detach(auth()->user()->id);
+       }
+       else{
+          $this->question->users()->syncWithoutDetaching([auth()->user()->id=>['type'=>'like']]);
+       }
     }
 
     public function downVote()
     {
-        $this->question->users()->attach([
-          'user_id'=>auth()->id,
-          'type'=>'dislike'
-        ]);
+       $disliked=$this->question->users()->where([['user_id',auth()->user()->id],['type','dislike']])->count();
+       if($disliked){
+          $this->question->users()->detach(auth()->user()->id);
+       }
+       else{
+          $this->question->users()->syncWithoutDetaching([auth()->user()->id=>['type'=>'dislike']]);
+       }
     }
+
 }

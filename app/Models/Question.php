@@ -12,7 +12,7 @@ class Question extends Model
 
     protected $guarded=[];
 
-    protected $appends=['totalUpVote','totalDownVote'];
+    protected $appends=['totalUpVote','totalDownVote','liked','disliked'];
 
     public function answers()
     {
@@ -59,5 +59,25 @@ class Question extends Model
     public function getTotalDownVoteAttribute()
     {
         return $this->users()->where('type','dislike')->count();
+    }
+
+    public function getLikedAttribute()
+    {
+        if(auth()->user()){
+            return $this->users()->where([['user_id',auth()->user()->id],['type','like']])->count();
+        }
+        else{
+            return false;
+        }
+    }
+
+    public function getDislikedAttribute()
+    {
+        if(auth()){
+            return $this->users()->where([['user_id',auth()->user()->id],['type','dislike']])->count();
+        }
+        else{
+            return false;
+        }
     }
 }

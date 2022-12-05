@@ -4,14 +4,12 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         @hasSection('title')
-
             <title>@yield('title') . Lara Overflow</title>
         @else
             <title>Lara Overflow</title>
         @endif
         <!-- Favicon -->
 		<link rel="shortcut icon" href="{{ url(asset('favicon.png')) }}">
-
         <!-- Fonts -->
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,7 +23,6 @@
         <livewire:scripts /> --}}
         <!-- CSRF Token -->
     </head>
-
     <body class="bg-gray-200">
         <div class="flex items-center justify-around bg-white fixed w-full top-0 oerflow-hidden">
             <div>
