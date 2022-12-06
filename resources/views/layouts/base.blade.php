@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         @hasSection('title')
-            <title>@yield('title') . Lara Overflow</title>
+            <title>@yield('title') - Lara Overflow</title>
         @else
             <title>Lara Overflow</title>
         @endif

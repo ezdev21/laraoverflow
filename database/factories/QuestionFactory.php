@@ -20,7 +20,8 @@ class QuestionFactory extends Factory
             'user_id'=>fake()->numberBetween(1,10),
             'category_id'=>fake()->numberBetween(1,10),
             'title'=>Str::random(30),
-            'description'=>Str::random(200)
+            'description'=>Str::random(200),
+            'views'=>fake()->numberBetween(1,10),
         ];
     }
 }

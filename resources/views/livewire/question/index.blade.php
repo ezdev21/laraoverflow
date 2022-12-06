@@ -10,7 +10,9 @@
       <a href="/questions/{{$question->id}}">
         <h1 class="font-medium text-xl">{{$question->title}}</h1>
         <p class="text-gray-800 my-1">{{$question->description}}</p>
-        <p>{{$question->answers_count}}</p>
+        <p>
+            <span>{{$question->answers_count}} answers</span>
+        </p>
         <p class="text-gray-600 text-sm">{{$question->created_at->diffForHumans()}}</p>
       </a>
     </div>
@@ -22,7 +24,7 @@
     </div>
   </div>
   <div class="w-1/6">
-
+    <a href="{{ route('questions.create') }}" class="font-semibold text-white bg-primary py-2.5 px-10 rounded-md focus:outline-none focus:underline transition ease-in-out duration-150">ask</a>
   </div>
 </div>
 @endsection

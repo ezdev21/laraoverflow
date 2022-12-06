@@ -42,7 +42,11 @@
             </div>
             <div x-if="" @click="disliking=false" class="absolute -inset-full opacity-50 bg-black z-10"></div>--}}
         </div>
-      <p class="text-gray-600 text-sm">{{$question->created_at->diffForHumans()}}</p>
+      <p class="text-gray-600 text-sm">
+        <span>viewed {{$question->views}} times</span>
+        <span>asked {{$question->created_at->diffForHumans()}}</span>
+        <span>modified {{$question->updated_at->diffForHumans()}}</span>
+      </p>
     </div>
     <div>
       @auth

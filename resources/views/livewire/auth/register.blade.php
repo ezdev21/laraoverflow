@@ -1,6 +1,6 @@
-@section('title', 'Create a new account')
+{{-- @section('title', 'Create a new account')
 @extends('layouts.app')
-@section('content')
+@section('content') --}}
 
 <div>
     <div class="sm:mx-auto sm:w-full sm:max-w-md">
@@ -83,5 +83,5 @@
         </div>
     </div>
 </div>
-@endsection
+{{-- @endsection --}}
 

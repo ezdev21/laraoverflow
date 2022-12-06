@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreignId('category_id');
             $table->string('title');
             $table->longText('description');
+            $table->integer('views');
             $table->timestamps();
         });
     }

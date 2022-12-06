@@ -73,7 +73,7 @@ class Question extends Model
 
     public function getDislikedAttribute()
     {
-        if(auth()){
+        if(auth()->user()){
             return $this->users()->where([['user_id',auth()->user()->id],['type','dislike']])->count();
         }
         else{

@@ -1,9 +1,9 @@
-@section('title', 'Sign in to your account')
+{{-- @section('title', 'Sign in to your account') --}}
 {{-- @extends('layouts.app')
 @section('content') --}}
-<div class="bg-gray-200">
+<div class="">
     <div class="sm:mx-auto sm:w-full sm:max-w-md">
-        <h2 class="mt-6 text-3xl font-extrabold text-center text-gray-600 leading-9">
+        <h2 class="text-3xl font-extrabold text-center text-gray-600 leading-9">
             Sign in to your account
         </h2>
         @if (Route::has('register'))
