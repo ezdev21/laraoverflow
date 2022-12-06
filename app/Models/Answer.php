@@ -9,6 +9,7 @@ use Laravel\Scout\Searchable;
 class Answer extends Model
 {
     use HasFactory,Searchable;
+    protected $guarded=[];
 
     public function question()
     {
