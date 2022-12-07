@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('answer_id');
             $table->foreignId('user_id');
+            $table->string('type');
             $table->timestamps();
         });
     }

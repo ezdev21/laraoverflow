@@ -39,7 +39,7 @@
 
                 <div class="mt-6">
                     <span class="block w-full rounded-md shadow-sm">
-                        <button type="submit" class="flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-primary border border-transparent rounded-md hover:bg-primary focus:outline-none focus:border-primary focus:ring-primary active:bg-primary transition duration-150 ease-in-out">
+                        <button type="submit" wire:loading.attr="disabled" class="flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-primary border border-transparent rounded-md hover:bg-primary focus:outline-none focus:border-primary focus:ring-primary active:bg-primary transition duration-150 ease-in-out">
                             Edit
                         </button>
                     </span>
