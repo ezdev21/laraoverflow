@@ -79,3 +79,7 @@ Route::prefix('teams')->group(function(){
     Route::get('{question}',Show::class);
     Route::get('{question}/edit',Edit::class);
 });
+
+Route::get('about',function(){
+    return view('about');
+});

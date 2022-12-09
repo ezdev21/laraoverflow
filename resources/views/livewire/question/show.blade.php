@@ -62,7 +62,7 @@
         <p class="my-1 text-xl">{{$this->answers->count()}} answers found</p>
       @endif
       @forelse ($this->answers as $answer)
-      <div class="flex my-5 bg-gray-100 rounded-md shadow-xl">
+      <div class="flex my-5 bg-white rounded-md shadow-xl">
         <div class="flex flex-col items-center">
             <button wire:click.prevent="upVoteAnswer({{$answer->id}})"">
               <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-10 h-10 @if($answer->liked) text-primary @else text-gray-400 @endif" viewBox="0 0 16 16">
