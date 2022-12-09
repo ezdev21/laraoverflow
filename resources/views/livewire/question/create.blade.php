@@ -1,3 +1,4 @@
+@section('title', 'ask question')
 <div>
     <div class="sm:mx-auto sm:w-full sm:max-w-md m-5 p-2">
         <div class="px-4 bg-white shadow sm:rounded-lg sm:px-10 p-2">

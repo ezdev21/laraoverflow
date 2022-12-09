@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('title');
             $table->longText('description');
             $table->integer('views')->default(0);
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }

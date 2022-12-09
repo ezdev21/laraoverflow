@@ -1,8 +1,11 @@
-{{-- @section('title', $question->title)
-@extends('layouts.app')
+@section('title', $question->title)
+{{--@extends('layouts.app')
 @section('content') --}}
 <div class="flex space-x-5">
   <div class="w-3/4">
+    @if ($question->status=="closed")
+      <div class="bg-blue-300 p-1">this question is closed by the user so you can't answer</div>
+    @endif
     <div class="p-3 mb-5 shadow-xl rounded-md bg-white">
       <h1 class="font-medium text-xl">{{$question->title}}</h1>
       <p class="text-gray-800 my-1">{{$question->description}}</p>
@@ -43,20 +46,22 @@
         <div wire:click="closeModal()" class="absolute -inset-full opacity-50 bg-black z-10"></div>
     @endif
     @auth
-    <div>
-      <h1 class="text-2xl">submit your answer here</h1>
-      <form wire:submit="answer()" class="">
-      <textarea wire:model="answer" required class="w-full h-32 my-1 rounded-md shadow-xl border border-gray-300 focus:border-primary focus:ring-primary">
-      </textarea>
-      <button type="submit" wire:loading.attr="disabled" class="block cursor-pointer font-semibold text-white bg-primary py-2.5 px-10 rounded-md focus:outline-none focus:underline transition ease-in-out duration-150">
-        Submit
-        {{-- <span wire:loading.remove>Submit</span>
-        <span wire:loading>Please Wait</span> --}}
-      </button>
-      </form>
-      @else
-      <p><a href="/login" class="text-primary text-xl">login</a> to answer  this question</p>
-    </div>
+    @if($question->status!='closed')
+      <div>
+        <h1 class="text-2xl">submit your answer here</h1>
+        <form wire:submit="answer()" class="">
+        <textarea wire:model="answer" required class="w-full h-32 my-1 rounded-md shadow-xl border border-gray-300 focus:border-primary focus:ring-primary">
+        </textarea>
+        <button type="submit" wire:loading.attr="disabled" class="block cursor-pointer font-semibold text-white bg-primary py-2.5 px-10 rounded-md focus:outline-none focus:underline transition ease-in-out duration-150">
+          Submit
+          {{-- <span wire:loading.remove>Submit</span>
+          <span wire:loading>Please Wait</span> --}}
+        </button>
+        </form>
+        @else
+        <p><a href="/login" class="text-primary text-xl">login</a> to answer  this question</p>
+      </div>
+    @endif
     @endauth
       @if($this->answers->count())
         <p class="my-1 text-xl">{{$this->answers->count()}} answers found</p>
