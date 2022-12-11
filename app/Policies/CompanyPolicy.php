@@ -53,7 +53,7 @@ class CompanyPolicy
      */
     public function update(User $user, Company $company)
     {
-        return $user->id==$company->user->id || str_ends_with($this->email,'@laraoverflow.com');
+        return $user->id==$company->user_id || str_ends_with($this->email,'@laraoverflow.com');
     }
 
     /**
@@ -65,7 +65,7 @@ class CompanyPolicy
      */
     public function delete(User $user, Company $company)
     {
-        return $user->id==$company->user->id || str_ends_with($this->email,'@laraoverflow.com');
+        return $user->id==$company->user_id || str_ends_with($this->email,'@laraoverflow.com');
     }
 
     /**
@@ -77,7 +77,7 @@ class CompanyPolicy
      */
     public function restore(User $user, Company $company)
     {
-        return $user->id==$company->user->id || str_ends_with($this->email,'@laraoverflow.com');
+        return $user->id==$company->user_id || str_ends_with($this->email,'@laraoverflow.com');
     }
 
     /**
@@ -89,6 +89,6 @@ class CompanyPolicy
      */
     public function forceDelete(User $user, Company $company)
     {
-        return $user->id==$company->user->id || str_ends_with($this->email,'@laraoverflow.com');
+        return $user->id==$company->user_id || str_ends_with($this->email,'@laraoverflow.com');
     }
 }

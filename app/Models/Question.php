@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Laravel\Scout\Searchable;
@@ -36,14 +37,11 @@ class Question extends Model
           'description'=>$this->description
         ];
     }
-    public function getCreatedAtDiffAttribute()
+    public function askedAt():Attribute
     {
-        return $this->created_at->diffForHumans();
-    }
-
-    public function getUpdatedAtDiffAttribute()
-    {
-        return $this->updated_at->diffForHumans();
+        return Attribute::make(
+            get:fn () =>$this->created_at->diffForHumans()
+        );
     }
 
     public function users()

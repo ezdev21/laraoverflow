@@ -33,9 +33,9 @@ class AnswerResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\TextColumn::make('body')->sortable()->searchable(),
                 Tables\Columns\TextColumn::make('user_id')->sortable()->searchable(),
                 Tables\Columns\TextColumn::make('question_id')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('answer')->sortable()->searchable(),
             ])
             ->filters([
                 //

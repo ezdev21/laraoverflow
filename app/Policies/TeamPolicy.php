@@ -53,7 +53,7 @@ class TeamPolicy
      */
     public function update(User $user, Team $team)
     {
-        return $user->team->id==$team->id || str_ends_with($this->email,'@laraoverflow.com');
+        return $user->team_id==$team->id || str_ends_with($this->email,'@laraoverflow.com');
     }
 
     /**
@@ -65,7 +65,7 @@ class TeamPolicy
      */
     public function delete(User $user, Team $team)
     {
-        return $user->team->id==$team->id || str_ends_with($this->email,'@laraoverflow.com');;
+        return $user->team_id==$team->id || str_ends_with($this->email,'@laraoverflow.com');;
     }
 
     /**
@@ -77,7 +77,7 @@ class TeamPolicy
      */
     public function restore(User $user, Team $team)
     {
-        return $user->team->id==$team->id || str_ends_with($this->email,'@laraoverflow.com');;
+        return $user->team_id==$team->id || str_ends_with($this->email,'@laraoverflow.com');;
     }
 
     /**
@@ -89,6 +89,6 @@ class TeamPolicy
      */
     public function forceDelete(User $user, Team $team)
     {
-        return $user->team->id==$team->id || str_ends_with($this->email,'@laraoverflow.com');;
+        return $user->team_id==$team->id || str_ends_with($this->email,'@laraoverflow.com');;
     }
 }

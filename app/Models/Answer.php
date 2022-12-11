@@ -29,7 +29,7 @@ class Answer extends Model
     public function toSearchableArray()
     {
         return[
-          'answer'=>$this->answer
+          'answer'=>$this->body
         ];
     }
 }

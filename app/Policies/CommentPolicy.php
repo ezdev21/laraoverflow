@@ -53,7 +53,7 @@ class CommentPolicy
      */
     public function update(User $user, Comment $comment)
     {
-        return $user->id==$comment->user->id || str_ends_with($this->email,'@laraoverflow.com');
+        return $user->id==$comment->user_id || str_ends_with($this->email,'@laraoverflow.com');
     }
 
     /**
@@ -65,7 +65,7 @@ class CommentPolicy
      */
     public function delete(User $user, Comment $comment)
     {
-        return $user->id==$comment->user->id || str_ends_with($this->email,'@laraoverflow.com');
+        return $user->id==$comment->user_id || str_ends_with($this->email,'@laraoverflow.com');
     }
 
     /**
@@ -77,7 +77,7 @@ class CommentPolicy
      */
     public function restore(User $user, Comment $comment)
     {
-        return $user->id==$comment->user->id || str_ends_with($this->email,'@laraoverflow.com');
+        return $user->id==$comment->user_id || str_ends_with($this->email,'@laraoverflow.com');
     }
 
     /**
@@ -89,6 +89,6 @@ class CommentPolicy
      */
     public function forceDelete(User $user, Comment $comment)
     {
-        return $user->id==$comment->user->id || str_ends_with($this->email,'@laraoverflow.com');
+        return $user->id==$comment->user_id || str_ends_with($this->email,'@laraoverflow.com');
     }
 }

@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\QuestionResource\Pages;
-use App\Filament\Resources\QuestionResource\RelationManagers;
-use App\Models\Question;
+use App\Filament\Resources\CompanyResource\Pages;
+use App\Filament\Resources\CompanyResource\RelationManagers;
+use App\Models\Company;
 use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
@@ -13,9 +13,9 @@ use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class QuestionResource extends Resource
+class CompanyResource extends Resource
 {
-    protected static ?string $model = Question::class;
+    protected static ?string $model = Company::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
 
@@ -23,8 +23,9 @@ class QuestionResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('title')->autofocus()->placeholder('title')->required(),
-                Forms\Components\Textarea::make('description')->placeholder('description')->required(),
+                Forms\Components\TextInput::make('name')->autofocus()->placeholder('company name')->required(),
+                Forms\Components\TextInput::make('description')->placeholder('description')->required(),
+                Forms\Components\Select::make('country')->required()->default('Ethiopia')
             ]);
     }
 
@@ -32,11 +33,11 @@ class QuestionResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('title')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('name')->sortable()->searchable(),
                 Tables\Columns\TextColumn::make('description')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('askedAt')->sortable(),
+                Tables\Columns\TextColumn::make('country')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('createdAt')->sortable(),
             ])
-            ->defaultSort('created_at','desc')
             ->filters([
                 //
             ])
@@ -58,10 +59,9 @@ class QuestionResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListQuestions::route('/'),
-            'create' => Pages\CreateQuestion::route('/create'),
-            'edit' => Pages\EditQuestion::route('/{record}/edit'),
+            'index' => Pages\ListCompanies::route('/'),
+            'create' => Pages\CreateCompany::route('/create'),
+            'edit' => Pages\EditCompany::route('/{record}/edit'),
         ];
     }
-    
 }

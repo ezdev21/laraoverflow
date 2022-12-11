@@ -24,7 +24,7 @@
         <!-- CSRF Token -->
     </head>
     <body class="bg-gray-200">
-        <div class="flex items-center justify-around bg-white fixed w-full top-0 oerflow-hidden">
+        <div class="flex items-center justify-around bg-gradient-to-r from-[#004e85] to-[#4fffd6] via-[#fcfe5c] fixed w-full top-0 oerflow-hidden">
             <div>
                 <a href="/" class="flex items-center">
                     <img src="/favicon.png" alt="app logo" class="w-20">
@@ -33,7 +33,7 @@
             </div>
             <div class="rounded-xl my-auto py-auto mx-3 hidden lg:inline">
               <form @submit.prevent="search" class="flex rounded-md">
-                 <input type="search" v-model="searchQuery" required class="bg-gray-300 focus:bg-white w-96 py-1.5 px-2 text-lg outline-none rounded-l-md focus:outline-none focus:ring-primary border-gray-300 focus:border-primary" placeholder="search LaraOverflow">
+                 <input type="search" v-model="searchQuery" required class="w-96 py-1.5 px-2 text-lg outline-none rounded-l-md focus:outline-none focus:ring-primary border-gray-300 focus:border-primary" placeholder="search LaraOverflow">
                  <button type="submit" class="bg-primary text-xl py-1.5 px-5 my-auto rounded-r-md" >
                    <svg xmlns="http://www.w3.org/2000/svg" class="text-white h-8 w-8 font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -41,14 +41,17 @@
                  </button>
               </form>
             </div>
-            <div class="">
+            <div class="flex space-x-5">
+                <div class="">
+                    <a href="{{ route('questions.create') }}" class="font-semibold text-white bg-primary py-2.5 px-5 rounded-md focus:outline-none focus:underline transition ease-in-out duration-150">ask</a>
+                </div>
                 @if (Route::has('login'))
                     <div class="space-x-4">
                         @auth
                             <a
                                 href="{{ route('logout') }}"
                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
-                                class="font-medium primary focus:outline-none focus:underline transition ease-in-out duration-150"
+                                {{-- class="font-medium primary focus:outline-none focus:underline transition ease-in-out duration-150" --}}
                             >
                                 Log out
                             </a>
