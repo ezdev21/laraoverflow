@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\AnswerResource\Pages;
-use App\Filament\Resources\AnswerResource\RelationManagers;
-use App\Models\Answer;
+use App\Filament\Resources\CommentResource\Pages;
+use App\Filament\Resources\CommentResource\RelationManagers;
+use App\Models\Comment;
 use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
@@ -13,20 +13,18 @@ use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class AnswerResource extends Resource
+class CommentResource extends Resource
 {
-    protected static ?string $model = Answer::class;
+    protected static ?string $model = Comment::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-reply';
-
-    protected static ?int $navigationSort = 3;
+    protected static ?string $navigationIcon = 'heroicon-o-annotation';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
                 Forms\Components\Select::make('question')->placeholder('question')->autofocus()->required(),
-                Forms\Components\TextInput::make('answer')->autofocus()->placeholder('answer')->required(),
+                Forms\Components\TextInput::make('title')->autofocus()->placeholder('answer')->required(),
             ]);
     }
 
@@ -35,8 +33,8 @@ class AnswerResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('body')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('user_id')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('question_id')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('user')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('question')->sortable()->searchable(),
             ])
             ->filters([
                 //
@@ -59,9 +57,9 @@ class AnswerResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListAnswers::route('/'),
-            'create' => Pages\CreateAnswer::route('/create'),
-            'edit' => Pages\EditAnswer::route('/{record}/edit'),
+            'index' => Pages\ListComments::route('/'),
+            'create' => Pages\CreateComment::route('/create'),
+            'edit' => Pages\EditComment::route('/{record}/edit'),
         ];
     }
 }

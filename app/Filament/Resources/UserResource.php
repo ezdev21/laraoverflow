@@ -39,7 +39,7 @@ class UserResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('name')->sortable()->searchable(),
                 Tables\Columns\TextColumn::make('email')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('createdAt')->sortable(),
+                Tables\Columns\TextColumn::make('createdAtDiff')->label('registered')->sortable(),
             ])
             ->defaultSort('created_at','desc')
             ->filters([
