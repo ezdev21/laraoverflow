@@ -17,14 +17,15 @@ class AnswerResource extends Resource
 {
     protected static ?string $model = Answer::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-reply';
+
+    protected static ?int $navigationSort = 3;
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('title')->autofocus()->placeholder('user_id')->required(),
-                Forms\Components\TextInput::make('description')->placeholder('question_id')->required(),
+                Forms\Components\Select::make('question')->placeholder('question')->autofocus()->required(),
                 Forms\Components\TextInput::make('title')->autofocus()->placeholder('answer')->required(),
             ]);
     }

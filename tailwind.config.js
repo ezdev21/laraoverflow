@@ -8,11 +8,11 @@ module.exports = {
                 logo:['Pacifico']
             },
             colors:{
-                'primary':'#f7b231',
+                'primary':'#febd58',
                 'secondary':'#00a9a8'
             },
             backgroundColors:{
-                'primary':'#f7b231',
+                'primary':'#febd58',
                 'secondary':'#00a9a8',
             },
         },

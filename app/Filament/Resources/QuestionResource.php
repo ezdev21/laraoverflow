@@ -10,6 +10,7 @@ use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
+use Illuminate\Contracts\View\View;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
@@ -17,7 +18,9 @@ class QuestionResource extends Resource
 {
     protected static ?string $model = Question::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-question-mark-circle';
+
+    protected static ?int $navigationSort = 2;
 
     public static function form(Form $form): Form
     {
@@ -32,8 +35,8 @@ class QuestionResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('title')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('description')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('title')->limit(40)->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('description')->limit(40)->sortable()->searchable(),
                 Tables\Columns\TextColumn::make('askedAt')->sortable(),
             ])
             ->defaultSort('created_at','desc')
@@ -63,5 +66,4 @@ class QuestionResource extends Resource
             'edit' => Pages\EditQuestion::route('/{record}/edit'),
         ];
     }
-    
 }

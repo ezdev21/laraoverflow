@@ -43,7 +43,7 @@
             </div>
             <div class="flex space-x-5">
                 <div class="">
-                    <a href="{{ route('questions.create') }}" class="font-semibold text-white bg-primary py-2.5 px-5 rounded-md focus:outline-none focus:underline transition ease-in-out duration-150">ask</a>
+                    <a href="{{ route('questions.create') }}" class="font-semibold bg-white text-primary border-primary boder-2 py-2.5 px-5 rounded-md focus:outline-none focus:underline transition ease-in-out duration-150">ask</a>
                 </div>
                 @if (Route::has('login'))
                     <div class="space-x-4">

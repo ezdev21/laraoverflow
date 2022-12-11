@@ -8,9 +8,10 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Filament\Models\Contracts\FilamentUser;
+use Filament\Models\Contracts\HasName;
 use Spatie\Permission\Traits\HasRoles;
 
-class User extends Authenticatable implements FilamentUser
+class User extends Authenticatable implements FilamentUser,HasName
 {
     use HasApiTokens, HasFactory, Notifiable,HasRoles;
 
@@ -68,4 +69,10 @@ class User extends Authenticatable implements FilamentUser
     {
         return $this->belongsToMany(Answer::class);
     }
+
+    public function getFilamentName(): string
+    {
+        return ucfirst($this->name);
+    }
+
 }
