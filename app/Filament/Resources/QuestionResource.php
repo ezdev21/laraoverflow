@@ -66,4 +66,14 @@ class QuestionResource extends Resource
             'edit' => Pages\EditQuestion::route('/{record}/edit'),
         ];
     }
+
+    protected static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::unAnsweredQuestions();
+    }
+
+    protected static function getNavigationBadgeColor(): ?string
+    {
+        return "danger";
+    }
 }

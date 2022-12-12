@@ -23,7 +23,7 @@
         {{$questions->links()}}
     </div>
   </div>
-  <div class="w-1/6">
+  <div class="w-1/6 pt-3 mt-3">
     <a href="{{ route('questions.create') }}" class="font-semibold text-white bg-primary py-2.5 px-10 rounded-md focus:outline-none focus:underline transition ease-in-out duration-150">ask</a>
   </div>
 </div>

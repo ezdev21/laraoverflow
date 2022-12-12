@@ -77,4 +77,14 @@ class UserResource extends Resource
                 ->requiresConfirmation()
             ];
     }
+
+    protected static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
+
+    protected static function getNavigationBadgeColor(): ?string
+    {
+        return "success";
+    }
 }

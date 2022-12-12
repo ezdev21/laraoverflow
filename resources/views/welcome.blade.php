@@ -43,11 +43,11 @@
             </div>
             <div class="bg-gray-300 py-10 px-5 flex flex-col space-y-2 items-center rounded-xl shadow-primary shadow-2xl">
                 <h1 class="text-4xl font-bold my-2 text-primary">91%</h1>
-                <p>from companies using Stack Overflow for Teams</p>
+                <p>from companies using LaraOverflow for Teams</p>
             </div>
             <div class="bg-gray-300 py-10 px-5 flex flex-col space-y-2 items-center rounded-xl shadow-primary shadow-2xl">
                 <h1 class="text-4xl font-bold my-2 text-primary">25+</h1>
-                <p>Stack Overflow for Teams instances active every day</p>
+                <p>LaraOverflow for Teams instances active every day</p>
             </div>
         </div>
     </div>
