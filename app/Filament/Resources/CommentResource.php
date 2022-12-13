@@ -25,8 +25,9 @@ class CommentResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\Select::make('question')->placeholder('question')->autofocus()->required(),
-                Forms\Components\TextInput::make('title')->autofocus()->placeholder('answer')->required(),
+                Forms\Components\Select::make('question_id')->relationship('question','title')->label('question')->placeholder('question')->autofocus()->required(),
+                Forms\Components\Select::make('answer_id')->relationship('answer','title')->label('answer')->placeholder('answer')->autofocus()->required(),
+                Forms\Components\TextInput::make('body')->autofocus()->placeholder('answer')->required(),
             ]);
     }
 

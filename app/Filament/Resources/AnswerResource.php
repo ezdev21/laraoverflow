@@ -25,8 +25,8 @@ class AnswerResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\Select::make('question')->placeholder('question')->autofocus()->required(),
-                Forms\Components\TextInput::make('answer')->autofocus()->placeholder('answer')->required(),
+                Forms\Components\Select::make('question_id')->label('question')->relationship('question','title')->placeholder('question')->autofocus()->required(),
+                Forms\Components\Textarea::make('body')->label('answer')->autofocus()->placeholder('answer')->required(),
             ]);
     }
 
@@ -34,9 +34,9 @@ class AnswerResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('body')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('user_id')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('question_id')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('body')->label('answer')->limit(40)->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('user.name')->label('asked by')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('question.title')->label('question')->limit(40)->sortable()->searchable(),
             ])
             ->filters([
                 //

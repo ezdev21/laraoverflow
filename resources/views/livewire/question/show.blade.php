@@ -6,7 +6,7 @@
     @if ($question->status=="closed")
       <div class="bg-blue-300 p-1">this question is closed by the user so you can't answer</div>
     @endif
-    <div class="p-3 mb-5 shadow-xl rounded-md bg-white">
+    <div class="p-3 mb-5 shadow-xl rounded-md bg-white @if($question->answers->count()==0) border-2 border-primary @endif">
       <h1 class="font-medium text-xl">{{$question->title}}</h1>
       <p class="text-gray-800 my-1">{{$question->description}}</p>
       <div class="inline mx-4">
@@ -96,7 +96,7 @@
       @endforelse
     </div>
   </div>
-  <div class="w-1/4">
+  <div class="w-1/4 py-2">
     <a href="{{ route('questions.create') }}" class="font-semibold text-white bg-primary py-2.5 px-10 rounded-md focus:outline-none focus:underline transition ease-in-out duration-150">ask</a>
   </div>
 </div>

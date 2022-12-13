@@ -15,6 +15,19 @@ class Question extends Model
 
     protected $appends=['totalUpVote','totalDownVote','liked','disliked'];
 
+    public static function boot()
+    {
+        parent::boot();
+        self::creating(function($question){
+          $question->user_id=auth()->user()->id;
+        });
+    }
+
+    public function user()
+    {
+      return $this->belongsTo(User::class);
+    }
+
     public function answers()
     {
       return $this->hasMany(Answer::class);
@@ -37,7 +50,7 @@ class Question extends Model
           'description'=>$this->description
         ];
     }
-    public function askedAt():Attribute
+    public function createdAtDiff():Attribute
     {
         return Attribute::make(
             get:fn () =>$this->created_at->diffForHumans()

@@ -11,9 +11,22 @@ class Answer extends Model
     use HasFactory,Searchable;
     protected $guarded=[];
 
+    public static function boot()
+    {
+        parent::boot();
+        self::creating(function($answer){
+          $answer->user_id=auth()->user()->id;
+        });
+    }
+
     public function question()
     {
       return $this->belongsTo(Question::class);
+    }
+
+    public function user()
+    {
+      return $this->belongsTo(User::class);
     }
 
     public function comments()

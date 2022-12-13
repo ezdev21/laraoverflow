@@ -37,7 +37,8 @@ class QuestionResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('title')->limit(40)->sortable()->searchable(),
                 Tables\Columns\TextColumn::make('description')->limit(40)->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('askedAt')->sortable(),
+                Tables\Columns\TextColumn::make('user.name')->label('asked by')->limit(40)->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('createdAtDiff')->label('asked at')->sortable(),
             ])
             ->defaultSort('created_at','desc')
             ->filters([
