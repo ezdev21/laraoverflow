@@ -1,6 +1,7 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
-
+const colors = require('tailwindcss/colors')
 module.exports = {
+    darkMode: 'class',
     theme: {
         extend: {
             fontFamily: {
@@ -8,11 +9,11 @@ module.exports = {
                 logo:['Pacifico']
             },
             colors:{
-                'primary':'#f5b654',
+                'primary':colors.rose,//'#00a9a8',//f5b654
                 'secondary':'#00a9a8'
             },
             backgroundColors:{
-                'primary':'#f5b654',
+                'primary':colors.rose,//'#00a9a8',
                 'secondary':'#00a9a8',
             },
         },
@@ -32,6 +33,8 @@ module.exports = {
         './resources/**/*.php',
         './resources/**/*.vue',
         './resources/**/*.twig',
+        './resources/**/*.blade.php',
+        './vendor/filament/**/*.blade.php',
     ],
     plugins: [
         require('@tailwindcss/forms'),

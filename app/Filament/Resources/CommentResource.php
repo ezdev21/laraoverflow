@@ -25,8 +25,8 @@ class CommentResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\Select::make('question_id')->relationship('question','title')->label('question')->placeholder('question')->autofocus()->required(),
-                Forms\Components\Select::make('answer_id')->relationship('answer','title')->label('answer')->placeholder('answer')->autofocus()->required(),
+                //Forms\Components\Select::make('question_id')->relationship('questions','title')->label('question')->placeholder('question')->autofocus()->required(),
+                //Forms\Components\Select::make('answer_id')->relationship('answer','title')->label('answer')->placeholder('answer')->autofocus()->required(),
                 Forms\Components\TextInput::make('body')->autofocus()->placeholder('answer')->required(),
             ]);
     }
@@ -36,8 +36,8 @@ class CommentResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('body')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('user')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('question')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('user.name')->label('commented by')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('question.title')->label('question')->sortable()->searchable(),
             ])
             ->filters([
                 //
