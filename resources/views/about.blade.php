@@ -12,6 +12,6 @@
       <li>-Filament admin panel</li>
     </ul>
     <a href="/">back to home</a>
-    <a href="github.com/ezra02/laraoverflow">star</a>
+    <a href="https://github.com/ezra02/laraoverflow">star</a>
   </div>
 @endsection

@@ -15,6 +15,8 @@ use App\Http\Livewire\Question\Index;
 use App\Http\Livewire\Question\Show;
 use App\Models\Question;
 use App\Models\Tag;
+use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Route;
 
@@ -82,4 +84,8 @@ Route::prefix('teams')->group(function(){
 
 Route::get('about',function(){
     return view('about');
+});
+
+Route::get('/test',function(){
+  
 });

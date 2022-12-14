@@ -9,6 +9,7 @@
         "algolia/algoliasearch-client-php": "^3.3",
         "doctrine/dbal": "^3.5",
         "filament/filament": "^2.0",
+        "flowframe/laravel-trend": "^0.1.1",
         "guzzlehttp/guzzle": "^7.2",
         "laravel-frontend-presets/tall": "^5.0",
         "laravel/framework": "^9.19",

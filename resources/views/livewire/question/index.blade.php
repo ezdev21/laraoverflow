@@ -4,7 +4,6 @@
 @section('content')
 
 <div class="flex">
-  <h1>hello</h1>
   <div class="w-5/6 flex flex-wrap py-2">
     @forelse ($questions as $question)
     <div class="p-3 m-3 shadow-xl rounded-md bg-white w-full lg:w-5/12 @if($question->answers->count()==0) border-2 border-primary @endif">
