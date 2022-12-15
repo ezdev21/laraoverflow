@@ -6,10 +6,14 @@
 <div class="flex">
   <div class="w-5/6 flex flex-wrap py-2">
     @forelse ($questions as $question)
-    <div class="p-3 m-3 shadow-xl rounded-md bg-white w-full lg:w-5/12 @if($question->answers->count()==0) border-2 border-primary @endif">
+    <div class="p-3 m-3 shadow-xl rounded-md bg-white w-full lg:w-5/12 @if($question->answers->count()==0) border-2 border-red-500 @endif">
       <a href="/questions/{{$question->id}}">
         <h1 class="font-medium text-xl">{{$question->title}}</h1>
-        <p class="text-gray-800 my-1">{{$question->description}}</p>
+        @if(strlen($question->description)<200)
+          <p class="text-md text-gray-800 my-1">{{$question->description}}</p>
+        @else
+        <p class="text-gray-800 text-md my-1">{{substr($question->description,0,200)}}...</p>
+        @endif
         <p>
             <span>{{$question->answers_count}} answers</span>
         </p>

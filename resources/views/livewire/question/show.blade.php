@@ -6,7 +6,7 @@
     @if ($question->status=="closed")
       <div class="bg-blue-300 p-1">this question is closed by the user so you can't answer</div>
     @endif
-    <div class="p-3 mb-5 shadow-xl rounded-md bg-white @if($question->answers->count()==0) border-2 border-primary @endif">
+    <div class="p-3 mb-5 shadow-xl rounded-md bg-white @if($question->answers->count()==0) border-2 border-red-500 @endif">
       <h1 class="font-medium text-xl">{{$question->title}}</h1>
       <p class="text-gray-800 my-1">{{$question->description}}</p>
       <div class="inline mx-4">
@@ -22,14 +22,14 @@
           </svg>
         </button>
         <span class="text-xl">{{$question->totalDownVote}}</span>
-          <p class="text-sm">
-          <span>{{$this->answers->count()}} answers</span>
-          <span class="text-gray-600">viewed </span><span>{{$question->views}} times</span>
-          <span class="text-gray-600">asked </span><span>{{$question->created_at->diffForHumans()}}</span>
+          <div class="text-sm flex space-x-5">
+            <p><span>{{$this->answers->count()}} answers</span></p>
+            <p><span class="text-gray-600">viewed </span><span>{{$question->views}} times</span></p>
+            <p><span class="text-gray-600">asked </span><span>{{$question->created_at->diffForHumans()}}</span></p>
           @if($question->created_at!=$question->updated_at)
-          <span class="text-gray-600">modified </span><span>{{$question->updated_at->diffForHumans()}}</span>
+            <p><span class="text-gray-600">modified </span><span>{{$question->updated_at->diffForHumans()}}</span></p>
           @endif
-       </p>
+          </div>
       </div>
     </div>
     @if($question->voting)
@@ -52,7 +52,7 @@
         <form wire:submit="answer()" class="">
         <textarea wire:model="answer" required class="w-full h-32 my-1 rounded-md shadow-xl border border-gray-300 focus:border-primary focus:ring-primary">
         </textarea>
-        <button type="submit" wire:loading.attr="disabled" class="block cursor-pointer font-semibold text-white bg-primary py-2.5 px-10 rounded-md focus:outline-none focus:underline transition ease-in-out duration-150">
+        <button type="submit" wire:loading.attr="disabled" class="block cursor-pointer font-semibold text-white bg-primary py-2 px-10 rounded-md focus:outline-none focus:underline transition ease-in-out duration-150">
           Submit
           {{-- <span wire:loading.remove>Submit</span>
           <span wire:loading>Please Wait</span> --}}

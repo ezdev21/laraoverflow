@@ -49,8 +49,24 @@
  * .bg-pattern-graph-paper { ... }
  * .skew-45 { ... }
  */
+$primary:coral;
 
 [x-cloak] {
     display: none;
 }
 
+.text-primary{
+    color: $primary;
+}
+
+.bg-primary{
+    background-color: $primary;
+}
+
+.border-primary{
+    border-color: coral;
+}
+ input:focus{
+    border-right: 3px;
+    border-color: coral;
+ }
