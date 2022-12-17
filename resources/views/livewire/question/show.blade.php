@@ -68,9 +68,9 @@
       @endif
       @forelse ($this->answers as $answer)
       <div class="flex my-5 bg-white rounded-md shadow-xl">
-        <div class="flex flex-col items-center">
-            <button wire:click.prevent="upVoteAnswer({{$answer->id}})"">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-10 h-10 @if($answer->liked) text-primary @else text-gray-400 @endif" viewBox="0 0 16 16">
+        <div x-data="{liked:{{$answer->liked}},disliked:{{$answer->disliked}}}" class="flex flex-col items-center">
+            <button wire:click.prevent="upVoteAnswer({{$answer->id}})" x-on:click="liked? liked=false : liked=true;disliked=false">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-10 h-10" x-bind:class="liked? 'text-primary' : 'text-gray-400'" viewBox="0 0 16 16">
                 <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
               </svg>
             </button>
@@ -80,8 +80,8 @@
                 <div class="h-12 w-12 rounded-full my-1 text-white bg-primary flex justify-center items-center text-2xl">{{$this->getFirstChar()}}</div>
             @endisset --}}
             <span class="text-xl">{{$this->totalVote($answer->id)}}</span>
-            <button wire:click.prevent="downVoteAnswer({{$answer->id}})">
-              <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="h-10 w-10 @if($answer->disliked) text-primary @else text-gray-400 @endif" viewBox="0 0 16 16">
+            <button wire:click.prevent="downVoteAnswer({{$answer->id}})" x-on:click="disliked? disliked=false : disliked=true;liked=false">
+              <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="h-10 w-10" x-bind:class="disliked? 'text-primary' : 'text-gray-400'" viewBox="0 0 16 16">
                 <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
               </svg>
             </button>

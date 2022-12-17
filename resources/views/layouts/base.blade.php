@@ -42,7 +42,7 @@
               </form>
             </div>
             <div class="flex space-x-5 items-center">
-                <div class="flex space-x-2">
+                <div class="flex space-x-3 text-primary">
                     <a href="{{ route('questions.create') }}" class="text-xl border-primary boder-2 py-2.5 rounded-md focus:outline-none focus:underline transition ease-in-out duration-150">Ask</a>
                     <a href="/about" class="text-xl boder-2 py-2.5 rounded-md focus:outline-none focus:underline transition ease-in-out duration-150">About</a>
                 </div>

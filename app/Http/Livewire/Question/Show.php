@@ -72,15 +72,10 @@ class Show extends Component
             $answer=$this->answers->find($answerId);
             $liked=$answer->users()->where([['user_id',auth()->user()->id],['type','like']])->count();
             if($liked){
-            $answer->users()->detach(auth()->user()->id);
-            $answer->liked=false;
+              $answer->users()->detach(auth()->user()->id);
             }
             else{
-            $answer->users()->syncWithoutDetaching([auth()->user()->id=>['type'=>'like']]);
-            if($answer->disliked){
-                $answer->disliked=false;
-            }
-            $answer->liked=true;
+              $answer->users()->syncWithoutDetaching([auth()->user()->id=>['type'=>'like']]);
             }
        }
        else{
@@ -96,14 +91,9 @@ class Show extends Component
             $disliked=$answer->users()->where([['user_id',auth()->user()->id],['type','dislike']])->count();
             if($disliked){
               $answer->users()->detach(auth()->user()->id);
-              $answer->disliked=false;
             }
             else{
               $answer->users()->syncWithoutDetaching([auth()->user()->id=>['type'=>'dislike']]);
-              if($answer->liked){
-                $answer->liked=false;
-              }
-              $answer->disliked=true;
             }
        }
        else{

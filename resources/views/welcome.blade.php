@@ -34,7 +34,7 @@
         </div>
         <div class="text-center lg:flex wrap justify-between space-x-5 text-2xl text-gray-700">
             <div class="bg-gray-300 py-5 px-5 flex flex-col space-y-2 items-center rounded-xl shadow-primary shadow-2xl">
-                <h1 class="text-4xl font-bold my-2 text-primary">100+</h1>
+                <h1 class="text-4xl font-bold my-2 text-primary">300+</h1>
                 <p>monthly visitors to LaraOverflow</p>
             </div>
             <div class="bg-gray-300 py-10 px-5 flex flex-col space-y-2 items-center rounded-xl shadow-primary shadow-2xl">
