@@ -1,7 +1,7 @@
 @section('title', $question->title)
 {{--@extends('layouts.app')
 @section('content') --}}
-<div class="flex space-x-5">
+<div class="flex space-x-3">
   <div class="w-3/4">
     @if ($question->status=="closed")
       <div class="bg-blue-300 p-1">this question is closed by the user so you can't answer</div>
@@ -97,7 +97,20 @@
     </div>
   </div>
   <div class="w-1/4 py-2">
-    <a href="{{ route('questions.create') }}" class="font-semibold text-white bg-primary py-2.5 px-10 rounded-md focus:outline-none focus:underline transition ease-in-out duration-150">ask</a>
+    <a href="{{ route('questions.create') }}" class="font-semibold text-white bg-primary py-2.5 px-10 rounded-md focus:outline-none focus:underline transition ease-in-out duration-150">
+      Ask Question</a>
+    <div class="my-5">
+        <h1 class="text-2xl border-b-2 text-gray-700 border-gray-300">Related Questions</h1>
+      <ul class="flex flex-col space-y-2">
+        @foreach ($question->relatedQuestions as $relatedQuestion)
+          <a href="{{route('questions.show',$relatedQuestion->id)}}">
+            <li class="py-1">
+                <span class="@if($relatedQuestion->answers_count>0) bg-green-400 @else bg-gray-300 @endif px-3 mr-2">{{$relatedQuestion->answers_count}}</span>{{$relatedQuestion->title}}
+            </li>
+          </a>
+        @endforeach
+      </ul>
+    </div>
   </div>
 </div>
 {{-- @endsection --}}

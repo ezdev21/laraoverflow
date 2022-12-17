@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Question;
 
 use App\Models\Answer;
 use App\Models\Question;
+use App\Models\Tag;
 use Livewire\Component;
 
 class Show extends Component
@@ -24,6 +25,7 @@ class Show extends Component
         $this->question->views++;
         //$this->question->save();
         $this->question->voting=false;
+        $this->getRelatedQuestions();
     }
 
     public function render()
@@ -127,5 +129,17 @@ class Show extends Component
         $totalDownvote=$answer->users()->where('type','dislike')->count();
         $netVote=$totalUpvote-$totalDownvote;
         return $netVote;
+    }
+
+    public function getRelatedQuestions()
+    {
+        $relatedQuestions=collect();
+        $tags=$this->question->tags()->get();
+        foreach ($tags as $tag) {
+          $tagQuestions=$tag->questions()->latest()->limit(10)->withCount('answers')->each(function($tagQuestion) use($relatedQuestions){
+            $relatedQuestions->push($tagQuestion);
+          });
+        }
+        $this->question->relatedQuestions=$relatedQuestions->shuffle()->take(10);
     }
 }

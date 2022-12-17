@@ -71,7 +71,7 @@ Route::middleware('auth')->group(function () {
 Route::prefix('questions')->group(function(){
     Route::get('/',Index::class)->name('questions.index');
     Route::get('create',Create::class)->name('questions.create')->middleware('auth');
-    Route::get('{question}',Show::class);
+    Route::get('{question}',Show::class)->name('questions.show');
     Route::get('{question}/edit',Edit::class);
 });
 
@@ -87,5 +87,5 @@ Route::get('about',function(){
 });
 
 Route::get('/test',function(){
-  
+
 });

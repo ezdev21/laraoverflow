@@ -41,7 +41,7 @@
                  </button>
               </form>
             </div>
-            <div class="flex space-x-5 items-center">
+            <div class="flex space-x-5 items-center text-primary">
                 <div class="flex space-x-3 text-primary">
                     <a href="{{ route('questions.create') }}" class="text-xl border-primary boder-2 py-2.5 rounded-md focus:outline-none focus:underline transition ease-in-out duration-150">Ask</a>
                     <a href="/about" class="text-xl boder-2 py-2.5 rounded-md focus:outline-none focus:underline transition ease-in-out duration-150">About</a>
@@ -69,7 +69,7 @@
                                           @csrf
                                        </form>
                                     </ul>
-                                    <div v-show="userDropdownMenu" x-on:click="userDropdownMenu=false" class="absolute z-10 -inset-y-0 -inset-x-0 bg-black opacity-50"></div>
+                                    <div x-show="userDropdownMenu" x-on:click="userDropdownMenu=false" class="absolute z-10 inset-0"></div>
                                 </div>
                             </div>
                         @else
