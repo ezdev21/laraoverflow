@@ -74,29 +74,16 @@ class Question extends Model
 
     public function getLikedAttribute()
     {
-        if(auth()->user()){
-            return $this->users()->where([['user_id',auth()->user()->id],['type','like']])->count();
-        }
-        else{
-            return false;
-        }
+        return auth()->user()? $this->users()->where([['user_id',auth()->user()->id],['type','like']])->exists() : false;
     }
 
     public function getDislikedAttribute()
     {
-        if(auth()->user()){
-            return $this->users()->where([['user_id',auth()->user()->id],['type','dislike']])->count();
-        }
-        else{
-            return false;
-        }
+        return auth()->user()? $this->users()->where([['user_id',auth()->user()->id],['type','dislike']])->exists() : false;
     }
 
     public static function unAnsweredQuestions():int
     {
-        // return static::query()->where(function($query){
-        //     return $query->where('question.answers',0)->count();
-        // })->count();
         return Question::withCount('answers')->get()->where('answers_count',0)->count();
     }
 }

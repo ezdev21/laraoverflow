@@ -1,6 +1,4 @@
 @section('title', $question->title)
-{{--@extends('layouts.app')
-@section('content') --}}
 <div class="flex space-x-3">
   <div class="w-3/4">
     @if ($question->status=="closed")
@@ -25,6 +23,7 @@
           <div class="text-sm flex space-x-5">
             <p><span>{{$this->answers->count()}} answers</span></p>
             <p><span class="text-gray-600">viewed </span><span>{{$question->views}} times</span></p>
+            <p><span class="text-gray-600">asked by </span><span>{{ucfirst($question->user->name)}}</span></p>
             <p><span class="text-gray-600">asked </span><span>{{$question->created_at->diffForHumans()}}</span></p>
           @if($question->created_at!=$question->updated_at)
             <p><span class="text-gray-600">modified </span><span>{{$question->updated_at->diffForHumans()}}</span></p>
@@ -43,7 +42,7 @@
         <p class="text-xl text-gray-600">sign in to upvote/downvote this question</p>
         <p class="m-auto"><a href="/login" class="text-2xl text-primary">sign in</a></p>
         </div>
-        <div wire:click="closeModal()" class="absolute -inset-full opacity-50 bg-black z-10"></div>
+        <button wire:click="closeModal()" class="absolute -inset-full opacity-50 bg-black z-10"></button>
     @endif
     @auth
     @if($question->status!='closed')
@@ -74,11 +73,6 @@
                 <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
               </svg>
             </button>
-            {{-- @isset($record)
-                <img src="/storage/profile/useravatar.jpeg" alt="" class="h-12 w-12 rounded-full my-1">
-            @else
-                <div class="h-12 w-12 rounded-full my-1 text-white bg-primary flex justify-center items-center text-2xl">{{$this->getFirstChar()}}</div>
-            @endisset --}}
             <span class="text-xl">{{$this->totalVote($answer->id)}}</span>
             <button wire:click.prevent="downVoteAnswer({{$answer->id}})" x-on:click="disliked? disliked=false : disliked=true;liked=false">
               <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="h-10 w-10" x-bind:class="disliked? 'text-primary' : 'text-gray-400'" viewBox="0 0 16 16">
@@ -88,7 +82,10 @@
         </div>
         <div class="p-2">
             <p>{{$answer->body}}</p>
-            <p class="text-gray-500">{{$answer->updated_at->diffForHumans()}}</p>
+            <div class="flex space-x-4">
+                <p class="text-gray-500">{{$answer->updated_at->diffForHumans()}}</p>
+                <p><span class="text-gray-500">asked by </span><span>{{ucfirst($this->question->user->name)}}</span></p>
+            </div>
         </div>
       </div>
       @empty
@@ -102,10 +99,10 @@
     <div class="my-5">
         <h1 class="text-2xl border-b-2 text-gray-700 border-gray-300">Related Questions</h1>
       <ul class="flex flex-col space-y-2">
-        @foreach ($question->relatedQuestions as $relatedQuestion)
-          <a href="{{route('questions.show',$relatedQuestion->id)}}">
+        @foreach ($this->relatedQuestions as $relatedQuestion)
+          <a href="{{route('questions.show',$relatedQuestion['id'])}}">
             <li class="py-1">
-                <span class="@if($relatedQuestion->answers_count>0) bg-green-400 @else bg-gray-300 @endif px-3 mr-2">{{$relatedQuestion->answers_count}}</span>{{$relatedQuestion->title}}
+                <span class="@if($relatedQuestion['answers_count']>0) bg-green-400 @else bg-gray-300 @endif px-3 mr-2">{{$relatedQuestion['answers_count']}}</span>{{$relatedQuestion['title']}}
             </li>
           </a>
         @endforeach
@@ -113,4 +110,3 @@
     </div>
   </div>
 </div>
-{{-- @endsection --}}

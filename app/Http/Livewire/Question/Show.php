@@ -11,6 +11,7 @@ class Show extends Component
 {
     public Question $question;
     public $answer="";
+    public $answers;
 
     public function mount()
     {
@@ -136,10 +137,10 @@ class Show extends Component
         $relatedQuestions=collect();
         $tags=$this->question->tags()->get();
         foreach ($tags as $tag) {
-          $tagQuestions=$tag->questions()->latest()->limit(10)->withCount('answers')->each(function($tagQuestion) use($relatedQuestions){
+          $tag->questions()->latest()->limit(10)->withCount('answers')->each(function($tagQuestion) use($relatedQuestions){
             $relatedQuestions->push($tagQuestion);
           });
         }
-        $this->question->relatedQuestions=$relatedQuestions->shuffle()->take(10);
+        $this->relatedQuestions=$relatedQuestions->shuffle()->take(10);
     }
 }
