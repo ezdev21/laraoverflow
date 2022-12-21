@@ -42,7 +42,7 @@
         <p class="text-xl text-gray-600">sign in to upvote/downvote this question</p>
         <p class="m-auto"><a href="/login" class="text-2xl text-primary">sign in</a></p>
         </div>
-        <button wire:click="closeModal()" class="absolute -inset-full opacity-50 bg-black z-10"></button>
+        <button wire:click="closeModal()" class="cursor-default absolute -inset-full opacity-50 bg-black z-10"></button>
     @endif
     @auth
     @if($question->status!='closed')
@@ -69,20 +69,20 @@
       <div class="flex my-5 bg-white rounded-md shadow-xl">
         <div x-data="{liked:{{$answer->liked}},disliked:{{$answer->disliked}}}" class="flex flex-col items-center">
             <button wire:click.prevent="upVoteAnswer({{$answer->id}})" x-on:click="liked? liked=false : liked=true;disliked=false">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-10 h-10" x-bind:class="liked? 'text-primary' : 'text-gray-400'" viewBox="0 0 16 16">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-10 h-10 text-gray-400" x-bind:class="liked? 'text-primary' : 'text-gray-400'" viewBox="0 0 16 16">
                 <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
               </svg>
             </button>
             <span class="text-xl">{{$this->totalVote($answer->id)}}</span>
             <button wire:click.prevent="downVoteAnswer({{$answer->id}})" x-on:click="disliked? disliked=false : disliked=true;liked=false">
-              <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="h-10 w-10" x-bind:class="disliked? 'text-primary' : 'text-gray-400'" viewBox="0 0 16 16">
+              <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="h-10 w-10 text-gray-400" x-bind:class="disliked? 'text-primary' : 'text-gray-400'" viewBox="0 0 16 16">
                 <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
               </svg>
             </button>
         </div>
         <div class="p-2">
             <p>{{$answer->body}}</p>
-            <div class="flex space-x-4">
+            <div class="flex space-x-4 text-sm">
                 <p class="text-gray-500">{{$answer->updated_at->diffForHumans()}}</p>
                 <p><span class="text-gray-500">asked by </span><span>{{ucfirst($this->question->user->name)}}</span></p>
             </div>
@@ -91,10 +91,9 @@
       @empty
         <p>No answers found</p>
       @endforelse
-    </div>
   </div>
   <div class="w-1/4 py-2">
-    <a href="{{ route('questions.create') }}" class="font-semibold text-white bg-primary py-2.5 px-10 rounded-md focus:outline-none focus:underline transition ease-in-out duration-150">
+    <a href="{{ route('questions.create') }}" class="font-semibold text-white bg-primary py-2 px-4 rounded-md focus:outline-none focus:underline transition ease-in-out duration-150">
       Ask Question</a>
     <div class="my-5">
         <h1 class="text-2xl border-b-2 text-gray-700 border-gray-300">Related Questions</h1>

@@ -16,7 +16,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+        @vite(['resources/sass/app.scss', 'resources/css/app.css', 'resources/js/app.js'])
         @livewireStyles
         @livewireScripts
         {{-- <livewire:styles />
@@ -24,7 +24,14 @@
         <!-- CSRF Token -->
     </head>
     <body class="bg-gray-200">
-        <div class="flex items-center justify-around bg-gradient-to-r from-[#004e85] to-[#4fffd6] via-[#fcfe5c] w-full top-0 oerflow-hidden">
+        <div x-data="{userDropdownMenu:false}" class="block right-0 lg:hidden bg-gradient-to-r from-[#004e85] to-[#4fffd6] via-[#fcfe5c]">
+            <button x-on:click="userDropdownMenu=true">
+              <svg xmlns="http://www.w3.org/2000/svg" class="text-primary h-12 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+        </div>
+        <div class="hidden lg:flex items-center justify-around bg-gradient-to-r from-[#004e85] to-[#4fffd6] via-[#fcfe5c] w-full top-0 overflow-hidden">
             <div>
                 <a href="/" class="flex items-center">
                     <img src="/favicon.png" alt="app logo" class="w-20">
