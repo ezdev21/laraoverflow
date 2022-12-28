@@ -24,12 +24,33 @@
         <!-- CSRF Token -->
     </head>
     <body class="bg-gray-200">
-        <div x-data="{userDropdownMenu:false}" class="block right-0 lg:hidden bg-gradient-to-r from-[#004e85] to-[#4fffd6] via-[#fcfe5c]">
+        <div x-data="{user:{{auth()->user()}},userDropdownMenu:false}" class="block right-0 lg:hidden bg-gradient-to-r from-[#004e85] to-[#4fffd6] via-[#fcfe5c]">
             <button x-on:click="userDropdownMenu=true">
               <svg xmlns="http://www.w3.org/2000/svg" class="text-primary h-12 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             </button>
+            <div x-show="userDropdownMenu" x-on:click.outside="userDropdownMenu=false" class="bg-gray-200 absolute top-2 left-2">
+                <ul class="z-20">
+                    <li class="hover:bg-blue-200 px-5 py-1"><a href="/">Home</a></li>
+                    <li class="hover:bg-blue-200 px-5 py-1"><a href="{{route('questions.create')}}}">Ask</a></li>
+                    <div x-if="!user" class="text-center">
+                        <li><a href="/login">Login</a></li>
+                        <li><a href="/register">Register</a></li>
+                    </div>
+                    <div x-show="user">
+                        <li class="text-center">
+                            <a
+                              href="{{ route('logout') }}"
+                              onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                              class="font-medium primary focus:outline-none focus:underline transition ease-in-out duration-150">Log out</a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </li>
+                    </div>
+                </ul>
+            </div>
         </div>
         <div class="hidden lg:flex items-center justify-around bg-gradient-to-r from-[#004e85] to-[#4fffd6] via-[#fcfe5c] w-full top-0 overflow-hidden">
             <div>
@@ -63,11 +84,10 @@
                                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                                   </svg>
                                 </button>
-                                <div x-show="userDropdownMenu" class="fixed text-xl bg-gray-100 top-2 right-2">
+                                <div x-show="userDropdownMenu" x-on:click.outside="userDropdownMenu=false" class="bg-gray-200 absolute top-2 right-2">
                                     <ul class="z-20">
                                         <li class="hover:bg-blue-200 px-5 py-1"><a href="/">Home</a></li>
                                         <li class="hover:bg-blue-200 px-5 py-1"><a href="{{route('questions.create')}}}">Ask</a></li>
-
                                         <a
                                           href="{{ route('logout') }}"
                                           onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
@@ -76,7 +96,6 @@
                                           @csrf
                                        </form>
                                     </ul>
-                                    <div x-show="userDropdownMenu" x-on:click="userDropdownMenu=false" class="absolute z-10 inset-0"></div>
                                 </div>
                             </div>
                         @else
