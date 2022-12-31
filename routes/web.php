@@ -13,12 +13,9 @@ use App\Http\Livewire\Question\Create;
 use App\Http\Livewire\Question\Edit;
 use App\Http\Livewire\Question\Index;
 use App\Http\Livewire\Question\Show;
-use App\Models\Question;
-use App\Models\Tag;
-use App\Models\User;
-use Carbon\Carbon;
-use Illuminate\Support\Facades\Cache;
+use App\Http\Livewire\Team\Create as TeamCreate;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -77,9 +74,8 @@ Route::prefix('questions')->group(function(){
 
 Route::prefix('teams')->group(function(){
     Route::get('/',Index::class)->name('teams.index');
-    Route::get('create',Create::class)->name('teams.create')->middleware('auth');
+    Route::get('create',TeamCreate::class)->name('teams.create')->middleware('auth');
     Route::get('{question}',Show::class);
-    Route::get('{question}/edit',Edit::class);
 });
 
 Route::get('about',function(){
