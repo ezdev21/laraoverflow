@@ -1,6 +1,20 @@
-.border-primary{
-  border-color: coral; 
-}
+
+.typing-text {
+    Width: 12ch;
+    White-Space: Nowrap;
+    Overflow: Hidden;
+    Border-Right: 3px Solid;
+    Animation: Typing 2s Steps(18) Infinite Alternate,
+      Blink 0.4s Step-End Infinite Alternate;
+    Text-Shadow: 0px 0px 3px White;
+  }
+
+  @Keyframes Typing {
+    From {
+      Width: 0;
+    }
+  }
+
 .animated-title{
     background-image: linear-gradient(
         -225deg,

@@ -56,7 +56,7 @@
             <div>
                 <a href="/" class="flex items-center">
                     <img src="/favicon.png" alt="app logo" class="w-20">
-                    <span class="text-3xl font-bold text-gray-600 font-logo">Lara<span class="text-primary">Overflow</span></span>
+                    <span class="text-3xl font-bold text-gray-600 font-logo typing-text">Lara<span class="text-primary">Overflow</span></span>
                 </a>
             </div>
             <div class="rounded-xl my-auto py-auto mx-3 hidden lg:inline">
