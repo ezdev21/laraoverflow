@@ -12,6 +12,7 @@ use App\Http\Livewire\Auth\Verify;
 use App\Http\Livewire\Question\Create;
 use App\Http\Livewire\Question\Edit;
 use App\Http\Livewire\Question\Index;
+use App\Http\Livewire\Question\Search;
 use App\Http\Livewire\Question\Show;
 use App\Http\Livewire\Team\Create as TeamCreate;
 use Illuminate\Support\Facades\Route;
@@ -81,6 +82,8 @@ Route::prefix('teams')->group(function(){
 Route::get('about',function(){
     return view('about');
 });
+
+Route::get('/results',Search::class)->name('question.search');
 
 Route::get('/test',function(){
 

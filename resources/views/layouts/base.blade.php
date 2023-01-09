@@ -55,13 +55,13 @@
         <div class="hidden lg:flex items-center justify-around bg-gradient-to-r from-[#004e85] to-[#4fffd6] via-[#fcfe5c] w-full top-0 overflow-hidden">
             <div>
                 <a href="/" class="flex items-center">
-                    <img src="/favicon.png" alt="app logo" class="w-20">
-                    <span class="text-3xl font-bold text-gray-600 font-logo typing-text">Lara<span class="text-primary">Overflow</span></span>
+                    <img src="/favicon.png" alt="app logo" class="w-20 fade-image">
+                    <span class="text-3xl font-bold text-gray-600 font-logo animated-title">Lara<span class="text-primary">Overflow</span></span>
                 </a>
             </div>
             <div class="rounded-xl my-auto py-auto mx-3 hidden lg:inline">
-              <form @submit.prevent="search" class="flex rounded-md">
-                 <input type="search" v-model="searchQuery" required class="w-96 py-1.5 px-2 text-lg outline-none rounded-l-md focus:outline-none focus:ring-primary border-gray-300 focus:border-primary" placeholder="search LaraOverflow">
+              <form action="{{route('question.search')}}" class="flex rounded-md">
+                 <input type="search" name="query" required class="w-96 py-1.5 px-2 text-lg outline-none rounded-l-md focus:outline-none focus:ring-primary border-gray-300 focus:border-primary" placeholder="search LaraOverflow">
                  <button type="submit" class="bg-primary text-xl py-1.5 px-5 my-auto rounded-r-md" >
                    <svg xmlns="http://www.w3.org/2000/svg" class="text-white h-8 w-8 font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />

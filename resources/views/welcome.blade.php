@@ -3,12 +3,12 @@
     <div style="background-image: url('/storage/home.jpg');" class="-mx-10 -mt-5 bg-cover flex flex-col justify-center min-h-screen py-12 sm:px-6 lg:px-8">
         <div class="flex justify-center">
             <div class="w-1/4">
-                <img src="favicon.png" alt="" class="">
+                <img src="favicon.png" alt="" class="fade-image">
             </div>
             <div class="flex flex-col justify-around">
                 <div class="space-y-6">
 
-                    <h1 class="text-5xl font-extrabold tracking-wider text-center text-gray-600 animated-title">
+                    <h1 class="text-5xl font-extrabold tracking-wider text-center text-gray-600 typing-text">
                         welcome to LaraOverflow
                     </h1>
 
