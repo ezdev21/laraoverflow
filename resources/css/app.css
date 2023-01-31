@@ -1,10 +1,10 @@
 
 .typing-text {
-    Width: 20ch;
+    Width: 24ch;
     White-Space: Nowrap;
     Overflow: Hidden;
     Border-Right: 3px Solid;
-    Animation: typing 5s Steps(18) Alternate,
+    Animation: typing 7s Steps(18) Alternate,
       Blink 0.4s Step-End Infinite Alternate;
     Text-Shadow: 0px 0px 3px White;
 }

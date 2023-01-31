@@ -29,6 +29,13 @@
             <p><span class="text-gray-600">modified </span><span>{{$question->updated_at->diffForHumans()}}</span></p>
           @endif
           </div>
+          <div class="flex space-x-2">
+            @foreach($this->tags as $tag)
+              <div class="bg-gray-500 text-white text-md rounded-sm flex items-center space-x-1 px-1">
+                  <span>{{$tag->name}}</span>
+              </div>
+            @endforeach
+          </div>
       </div>
     </div>
     @if($question->voting)
@@ -85,6 +92,13 @@
             <div class="flex space-x-4 text-sm">
                 <p class="text-gray-500">{{$answer->updated_at->diffForHumans()}}</p>
                 <p><span class="text-gray-500">asked by </span><span>{{ucfirst($this->question->user->name)}}</span></p>
+            </div>
+            <div class="flex space-x-2">
+                @foreach($this->tags as $tag)
+                  <div class="bg-primary text-white text-md rounded-sm flex items-center space-x-1 px-1">
+                      <span>{{$tag->name}}</span>
+                  </div>
+                @endforeach
             </div>
         </div>
       </div>

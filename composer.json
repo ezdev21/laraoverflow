@@ -12,7 +12,7 @@
         "flowframe/laravel-trend": "^0.1.1",
         "guzzlehttp/guzzle": "^7.2",
         "laravel-frontend-presets/tall": "^5.0",
-        "laravel/framework": "^9.19",
+        "laravel/framework": "^9.4",
         "laravel/sanctum": "^3.0",
         "laravel/scout": "^9.4",
         "laravel/tinker": "^2.7",

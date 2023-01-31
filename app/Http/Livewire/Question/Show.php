@@ -12,10 +12,13 @@ class Show extends Component
     public Question $question;
     public $answer="";
     public $answers;
+    public $relatedQuestions;
+    public $tags;
 
     public function mount()
     {
         $this->answers=$this->question->answers()->get();
+        $this->tags=$this->question->tags()->get();
         if(auth()->user())
         {
             foreach ($this->answers as $answer) {
